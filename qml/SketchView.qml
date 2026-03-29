@@ -22,7 +22,6 @@ Item {
         }
     }
 
-    // Red flash animation for rejected bond attempts
     SequentialAnimation {
         id: rejectFlash
         PropertyAnimation {
@@ -65,7 +64,7 @@ Item {
             }
         }
 
-        onWidthChanged: requestPaint()
+        onWidthChanged:  requestPaint()
         onHeightChanged: requestPaint()
     }
 
@@ -97,51 +96,91 @@ Item {
 
         onPaint: {
             var ctx = getContext("2d")
-            ctx.reset()
+
+            // ── FIX: use clearRect instead of ctx.reset() ──────────────
+            // ctx.reset() wipes font, strokeStyle, lineWidth etc. every
+            // frame causing flicker and inconsistent text rendering.
+            // clearRect only clears pixel data, preserving the context state.
+            // ───────────────────────────────────────────────────────────
             ctx.clearRect(0, 0, width, height)
 
             if (!root.controller) return
             var zoom = root.controller.zoomFactor
+            var atomR = 8  // atom circle radius in canvas pixels
 
-            // Draw bonds
+            // ── Draw bonds ──────────────────────────────────────────────
+            ctx.lineWidth = 1.5
+            ctx.setLineDash([])
+
             for (var i = 0; i < bondData.length; i++) {
                 var b = bondData[i]
                 if (!b) continue
-                ctx.strokeStyle = b.isInvalid ? "#FF3333" : "#FFFFFF"
-                ctx.lineWidth = 1.5
 
-                var x1 = b.x1 * zoom, y1 = b.y1 * zoom
-                var x2 = b.x2 * zoom, y2 = b.y2 * zoom
+                ctx.strokeStyle = b.isInvalid ? "#FF3333" : "#AAAAAA"
+
+                var x1 = b.x1 * zoom
+                var y1 = b.y1 * zoom
+                var x2 = b.x2 * zoom
+                var y2 = b.y2 * zoom
+
+                // Shorten bond endpoints so lines don't go through atom circles
+                var bdx = x2 - x1
+                var bdy = y2 - y1
+                var blen = Math.sqrt(bdx * bdx + bdy * bdy)
+                if (blen < 2) continue  // atoms on top of each other, skip
+
+                var ux = bdx / blen
+                var uy = bdy / blen
+                var margin = atomR + 2
+
+                // Only shorten if bond is long enough
+                if (blen > margin * 2) {
+                    x1 = x1 + ux * margin
+                    y1 = y1 + uy * margin
+                    x2 = x2 - ux * margin
+                    y2 = y2 - uy * margin
+                }
 
                 if (b.type === "single" || b.type === "wedge" ||
-                    b.type === "hash" || b.type === "dashed" || b.type === "arrow") {
+                    b.type === "hash"   || b.type === "arrow") {
+                    ctx.setLineDash([])
                     ctx.beginPath()
-                    if (b.type === "dashed") {
-                        ctx.setLineDash([5, 5])
-                    } else {
-                        ctx.setLineDash([])
-                    }
+                    ctx.moveTo(x1, y1)
+                    ctx.lineTo(x2, y2)
+                    ctx.stroke()
+
+                } else if (b.type === "dashed") {
+                    ctx.setLineDash([5, 5])
+                    ctx.beginPath()
                     ctx.moveTo(x1, y1)
                     ctx.lineTo(x2, y2)
                     ctx.stroke()
                     ctx.setLineDash([])
+
                 } else if (b.type === "double") {
-                    var dx = x2 - x1, dy = y2 - y1
-                    var len = Math.sqrt(dx*dx + dy*dy)
-                    if (len > 0) {
-                        var nx = -dy/len * 3, ny = dx/len * 3
+                    var ddx = x2 - x1, ddy = y2 - y1
+                    var dlen = Math.sqrt(ddx*ddx + ddy*ddy)
+                    if (dlen > 0) {
+                        var nx = -ddy/dlen * 3
+                        var ny =  ddx/dlen * 3
+                        ctx.setLineDash([])
                         ctx.beginPath()
-                        ctx.moveTo(x1+nx, y1+ny); ctx.lineTo(x2+nx, y2+ny)
+                        ctx.moveTo(x1+nx, y1+ny)
+                        ctx.lineTo(x2+nx, y2+ny)
                         ctx.stroke()
                         ctx.beginPath()
-                        ctx.moveTo(x1-nx, y1-ny); ctx.lineTo(x2-nx, y2-ny)
+                        ctx.moveTo(x1-nx, y1-ny)
+                        ctx.lineTo(x2-nx, y2-ny)
                         ctx.stroke()
                     }
+
                 } else if (b.type === "triple") {
                     var tdx = x2 - x1, tdy = y2 - y1
                     var tlen = Math.sqrt(tdx*tdx + tdy*tdy)
                     if (tlen > 0) {
-                        var tnx = -tdy/tlen * 4, tny = tdx/tlen * 4
+                        var tnx = -tdy/tlen * 4
+                        var tny =  tdx/tlen * 4
+                        ctx.setLineDash([])
                         ctx.beginPath()
                         ctx.moveTo(x1, y1); ctx.lineTo(x2, y2)
                         ctx.stroke()
@@ -152,15 +191,18 @@ Item {
                         ctx.moveTo(x1-tnx, y1-tny); ctx.lineTo(x2-tnx, y2-tny)
                         ctx.stroke()
                     }
+
                 } else if (b.type === "aromatic") {
                     var adx = x2 - x1, ady = y2 - y1
                     var alen = Math.sqrt(adx*adx + ady*ady)
                     if (alen > 0) {
-                        var anx = -ady/alen * 3, any_ = adx/alen * 3
-                        ctx.setLineDash([4, 4])
+                        var anx = -ady/alen * 3
+                        var any_ = adx/alen * 3
+                        ctx.setLineDash([])
                         ctx.beginPath()
                         ctx.moveTo(x1+anx, y1+any_); ctx.lineTo(x2+anx, y2+any_)
                         ctx.stroke()
+                        ctx.setLineDash([4, 4])
                         ctx.beginPath()
                         ctx.moveTo(x1-anx, y1-any_); ctx.lineTo(x2-anx, y2-any_)
                         ctx.stroke()
@@ -169,7 +211,7 @@ Item {
                 }
             }
 
-            // Temp line
+            // ── Draw temp preview line while dragging ───────────────────
             if (tempLine && tempLine.visible) {
                 ctx.strokeStyle = Theme.accentBlue
                 ctx.lineWidth = 1.5
@@ -181,34 +223,55 @@ Item {
                 ctx.setLineDash([])
             }
 
-            // Draw atoms
+            // ── Draw atoms (on top of bonds) ─────────────────────────────
             for (var j = 0; j < atomData.length; j++) {
                 var a = atomData[j]
                 if (!a) continue
-                var ax = a.x * zoom, ay = a.y * zoom
+                var ax = a.x * zoom
+                var ay = a.y * zoom
 
-                // Atom node circle
-                ctx.strokeStyle = Theme.accentBlue
-                ctx.lineWidth = 1.5
+                // Background fill so bonds don't show through label area
                 ctx.beginPath()
-                ctx.arc(ax, ay, 8, 0, 2 * Math.PI)
+                ctx.arc(ax, ay, atomR, 0, 2 * Math.PI)
+                ctx.fillStyle = Theme.bgCanvas
+                ctx.fill()
+
+                // Circle stroke
+                ctx.beginPath()
+                ctx.arc(ax, ay, atomR, 0, 2 * Math.PI)
+                if (a.highlighted) {
+                    ctx.strokeStyle = "#D4A017"
+                    ctx.lineWidth = 2.5
+                } else {
+                    ctx.strokeStyle = Theme.accentBlue
+                    ctx.lineWidth = 1.5
+                }
                 ctx.stroke()
 
-                // Highlighted = selected atom (orange fill)
+                // Orange fill for highlighted/selected atom
                 if (a.highlighted) {
-                    ctx.fillStyle = Qt.rgba(0.82, 0.60, 0.13, 0.8)
                     ctx.beginPath()
-                    ctx.arc(ax, ay, 8, 0, 2 * Math.PI)
+                    ctx.arc(ax, ay, atomR, 0, 2 * Math.PI)
+                    ctx.fillStyle = Qt.rgba(0.82, 0.60, 0.13, 0.6)
                     ctx.fill()
                 }
 
-                // Element label
+                // Element label — always show
+                // For carbon with bonds: show just a dot to keep it clean
+                // For all others: show the symbol
+                ctx.textAlign    = "center"
+                ctx.textBaseline = "middle"
+
                 if (a.element !== "C" || a.bondCount === 0) {
                     ctx.fillStyle = "#FFFFFF"
                     ctx.font = "bold 11px sans-serif"
-                    ctx.textAlign = "center"
-                    ctx.textBaseline = "middle"
                     ctx.fillText(a.element, ax, ay)
+                } else {
+                    // Carbon with bonds: just show a small dot
+                    ctx.fillStyle = Theme.accentBlue
+                    ctx.beginPath()
+                    ctx.arc(ax, ay, 2, 0, 2 * Math.PI)
+                    ctx.fill()
                 }
             }
         }
@@ -216,21 +279,44 @@ Item {
         MouseArea {
             anchors.fill: parent
             acceptedButtons: Qt.LeftButton
+            preventStealing: true
+            propagateComposedEvents: false
 
             onPressed: function(mouse) {
                 if (!root.controller) return
-                root.controller.canvasPressed(Qt.point(mouse.x / root.controller.zoomFactor,
-                                                       mouse.y / root.controller.zoomFactor))
+                root.controller.canvasPressed(
+                    Qt.point(mouse.x / root.controller.zoomFactor,
+                             mouse.y / root.controller.zoomFactor))
             }
             onPositionChanged: function(mouse) {
                 if (!root.controller) return
-                root.controller.canvasDragged(Qt.point(mouse.x / root.controller.zoomFactor,
-                                                       mouse.y / root.controller.zoomFactor))
+                root.controller.canvasDragged(
+                    Qt.point(mouse.x / root.controller.zoomFactor,
+                             mouse.y / root.controller.zoomFactor))
             }
             onReleased: function(mouse) {
                 if (!root.controller) return
-                root.controller.canvasReleased(Qt.point(mouse.x / root.controller.zoomFactor,
-                                                        mouse.y / root.controller.zoomFactor))
+                root.controller.canvasReleased(
+                    Qt.point(mouse.x / root.controller.zoomFactor,
+                             mouse.y / root.controller.zoomFactor))
+                // Force an immediate extra refresh so the temp line
+                // (dashed preview) is cleared in the same frame.
+                canvas.refresh()
+            }
+
+            // ── KEY FIX ──────────────────────────────────────────────
+            // onCanceled fires when the OS cancels the mouse/touch event
+            // (e.g. macOS trackpad fast gestures, window focus loss).
+            // Without this, m_isDragging stays true in C++ forever and
+            // the dashed preview line gets stuck on screen.
+            // ─────────────────────────────────────────────────────────
+            onCanceled: {
+                if (!root.controller) return
+                // Pass current drag end position to finalize or cancel
+                root.controller.canvasReleased(
+                    Qt.point(mouseX / root.controller.zoomFactor,
+                             mouseY / root.controller.zoomFactor))
+                canvas.refresh()
             }
             onWheel: function(wheel) {
                 if (!root.controller) return
@@ -306,14 +392,15 @@ Item {
                 Row {
                     width: parent.width
                     Text {
-                        text: "Name"
+                        text: "Formula"
                         font.family: Theme.fontFamily
                         font.pixelSize: Theme.fontSm
                         color: Theme.textSecondary
-                        width: 70
+                        width: 80
                     }
                     Text {
-                        text: (metadataCard.info && metadataCard.info.formula) ? "Molecule" : "\u2014"
+                        text: (metadataCard.info && metadataCard.info.formula)
+                              ? metadataCard.info.formula : "\u2014"
                         font.family: Theme.fontFamily
                         font.pixelSize: Theme.fontSm
                         font.weight: Font.DemiBold
@@ -328,7 +415,7 @@ Item {
                         font.family: Theme.fontFamily
                         font.pixelSize: Theme.fontSm
                         color: Theme.textSecondary
-                        width: 70
+                        width: 80
                     }
                     Text {
                         text: (metadataCard.info && metadataCard.info.molecularWeight)
@@ -344,18 +431,40 @@ Item {
                 Row {
                     width: parent.width
                     Text {
-                        text: "LogP"
+                        text: "Atoms"
                         font.family: Theme.fontFamily
                         font.pixelSize: Theme.fontSm
                         color: Theme.textSecondary
-                        width: 70
+                        width: 80
                     }
                     Text {
-                        text: "1.24"
+                        text: (metadataCard.info && metadataCard.info.atomCount !== undefined)
+                              ? metadataCard.info.atomCount : "0"
                         font.family: Theme.fontFamily
                         font.pixelSize: Theme.fontSm
                         font.weight: Font.DemiBold
-                        color: Theme.accentAmber
+                        color: Theme.textPrimary
+                    }
+                }
+
+                Row {
+                    width: parent.width
+                    Text {
+                        text: "Valid"
+                        font.family: Theme.fontFamily
+                        font.pixelSize: Theme.fontSm
+                        color: Theme.textSecondary
+                        width: 80
+                    }
+                    Text {
+                        text: (metadataCard.info && metadataCard.info.isValid !== undefined)
+                              ? (metadataCard.info.isValid ? "Yes \u2713" : "No \u26A0")
+                              : "\u2014"
+                        font.family: Theme.fontFamily
+                        font.pixelSize: Theme.fontSm
+                        font.weight: Font.DemiBold
+                        color: (metadataCard.info && metadataCard.info.isValid)
+                               ? Theme.accentGreen : Theme.accentAmber
                     }
                 }
             }
@@ -388,10 +497,10 @@ Item {
 
             Repeater {
                 model: [
-                    { icon: "\u270E", tool: "pen", active: true },
-                    { icon: "\u25A1", tool: "select", active: false },
-                    { icon: "\u2B21", tool: "shape", active: false },
-                    { icon: "T", tool: "text", active: false },
+                    { icon: "\u270E", tool: "pen",     active: true  },
+                    { icon: "\u25A1", tool: "select",  active: false },
+                    { icon: "\u2B21", tool: "shape",   active: false },
+                    { icon: "T",      tool: "text",    active: false },
                     { icon: "\u2316", tool: "measure", active: false }
                 ]
 
@@ -399,9 +508,9 @@ Item {
                     property bool isActive: index === 0
                     width: 32; height: 32
                     radius: Theme.radiusSm
-                    color: isActive ? Theme.accentBlue : (ftbMa.containsMouse ? Qt.rgba(1,1,1,0.08) : "transparent")
+                    color: isActive ? Theme.accentBlue
+                                    : (ftbMa.containsMouse ? Qt.rgba(1,1,1,0.08) : "transparent")
                     antialiasing: true
-
                     Behavior on color { ColorAnimation { duration: Theme.animFast } }
 
                     Text {
@@ -461,7 +570,9 @@ Item {
             Text {
                 id: statusText2
                 anchors.centerIn: parent
-                text: "RESOLUTION: 2.4\u00C5"
+                text: "ZOOM: " + (root.controller
+                      ? Math.round(root.controller.zoomFactor * 100) + "%"
+                      : "100%")
                 font.family: Theme.fontFamily
                 font.pixelSize: Theme.fontXs
                 color: Theme.textSecondary

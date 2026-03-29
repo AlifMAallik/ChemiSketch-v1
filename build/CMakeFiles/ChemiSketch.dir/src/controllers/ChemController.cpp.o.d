@@ -967,5 +967,6 @@ CMakeFiles/ChemiSketch.dir/src/controllers/ChemController.cpp.o: \
   /opt/homebrew/lib/QtGui.framework/Headers/qtguiexports.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qrgb.h \
   /opt/homebrew/lib/QtGui.framework/Headers/qrgba64.h \
+  /Users/jacob/Documents/ChemiSketch-master/chemisketch/src/utils/GeometryUtils.h \
   /opt/homebrew/lib/QtCore.framework/Headers/QLineF \
   /opt/homebrew/lib/QtCore.framework/Headers/qline.h

@@ -3,16 +3,21 @@
 #include "FileUtils.h"
 #include "BenzeneGenerator.h"
 #include "ElementData.h"
+#include "GeometryUtils.h"
 #include <QLineF>
 
 ChemController::ChemController(QObject *parent)
     : QObject(parent)
     , m_molecule(new Molecule(this))
 {
+    // NOTE: We do NOT connect moleculeChanged to canvasNeedsRepaint here.
+    // tryAddBond blocks signals during mutation to prevent re-entrant
+    // canvas reads. Instead, every mutation site emits canvasNeedsRepaint
+    // explicitly after it is done. The only connection kept is for
+    // moleculeInfoChanged so the properties panel stays live.
     connect(m_molecule, &Molecule::moleculeChanged, this, [this]() {
         m_infoDirty = true;
         emit moleculeInfoChanged();
-        emit canvasNeedsRepaint();
     });
 }
 
@@ -27,6 +32,18 @@ void ChemController::setActiveTool(const QString &tool)
         m_isDragging = false;
         m_startAtomId.clear();
         emit activeToolChanged();
+        emit canvasNeedsRepaint();
+    }
+}
+
+QString ChemController::activeElement() const { return m_activeElement; }
+
+void ChemController::setActiveElement(const QString &element)
+{
+    if (!ElementData::instance()->isValidElement(element)) return;
+    if (m_activeElement != element) {
+        m_activeElement = element;
+        emit activeElementChanged();
     }
 }
 
@@ -42,9 +59,7 @@ void ChemController::setIsDarkTheme(bool dark)
 
 QVariantMap ChemController::moleculeInfo() const
 {
-    if (!m_molecule) {
-        return QVariantMap();
-    }
+    if (!m_molecule) return QVariantMap();
     if (m_infoDirty) {
         m_cachedInfo = ChemistryUtils::instance()->moleculeInfo(m_molecule);
         m_infoDirty = false;
@@ -60,6 +75,7 @@ void ChemController::setZoomFactor(double factor)
     if (!qFuzzyCompare(m_zoomFactor, factor)) {
         m_zoomFactor = factor;
         emit zoomFactorChanged();
+        emit canvasNeedsRepaint();
     }
 }
 
@@ -70,7 +86,6 @@ bool ChemController::canAtomAcceptBond(const QString &atomId, double bondValence
     if (!m_molecule) return false;
     Atom *atom = m_molecule->getAtom(atomId);
     if (!atom) return false;
-
     double used = m_molecule->usedValence(atomId);
     int maxVal = ElementData::instance()->maxValence(atom->elementSymbol());
     return (used + bondValence) <= maxVal;
@@ -81,7 +96,6 @@ double ChemController::remainingValence(const QString &atomId) const
     if (!m_molecule) return 0.0;
     Atom *atom = m_molecule->getAtom(atomId);
     if (!atom) return 0.0;
-
     double used = m_molecule->usedValence(atomId);
     int maxVal = ElementData::instance()->maxValence(atom->elementSymbol());
     return qMax(0.0, maxVal - used);
@@ -92,18 +106,14 @@ bool ChemController::checkValenceBeforeBond(const QString &atom1Id, const QStrin
 {
     if (!canAtomAcceptBond(atom1Id, bondValence)) {
         Atom *a = m_molecule->getAtom(atom1Id);
-        if (a) {
-            emit const_cast<ChemController*>(this)->bondRejected(
-                atom1Id, a->position().x(), a->position().y());
-        }
+        if (a) emit const_cast<ChemController*>(this)->bondRejected(
+            atom1Id, a->position().x(), a->position().y());
         return false;
     }
     if (!canAtomAcceptBond(atom2Id, bondValence)) {
         Atom *a = m_molecule->getAtom(atom2Id);
-        if (a) {
-            emit const_cast<ChemController*>(this)->bondRejected(
-                atom2Id, a->position().x(), a->position().y());
-        }
+        if (a) emit const_cast<ChemController*>(this)->bondRejected(
+            atom2Id, a->position().x(), a->position().y());
         return false;
     }
     return true;
@@ -115,55 +125,47 @@ void ChemController::canvasPressed(const QPointF &pos)
 {
     if (!m_molecule) return;
 
-    // Reset stale drag state from a previous incomplete interaction
-    // (e.g., release event lost due to focus change or mouse leaving window)
+    // Clear any stale drag state
     if (m_isDragging) {
         m_isDragging = false;
         m_startAtomId.clear();
         emit canvasNeedsRepaint();
     }
 
-    if (m_activeTool == "benzene") {
-        addBenzeneAt(pos);
-        return;
-    }
+    if (m_activeTool == "benzene") { addBenzeneAt(pos); return; }
+    if (m_activeTool == "cyclohexane") { addCyclohexaneAt(pos); return; }
+    if (m_activeTool == "cyclopentane") { addCyclopentaneAt(pos); return; }
+    if (m_activeTool == "eraser") { eraseAtPoint(pos); return; }
 
-    if (m_activeTool == "eraser") {
-        eraseAtPoint(pos);
-        return;
-    }
-
-    // Bond tools
     bool isBondTool = (m_activeTool == "single_bond" || m_activeTool == "double_bond" ||
                        m_activeTool == "triple_bond" || m_activeTool == "wedge" ||
-                       m_activeTool == "hash" || m_activeTool == "dashed" ||
-                       m_activeTool == "arrow" || m_activeTool == "aromatic");
+                       m_activeTool == "hash"        || m_activeTool == "dashed" ||
+                       m_activeTool == "arrow"       || m_activeTool == "aromatic");
 
     Atom *hitAtom = m_molecule->atomAtPoint(pos, ATOM_HIT_RADIUS);
 
     if (isBondTool) {
         if (hitAtom) {
             m_startAtomId = hitAtom->atomId();
-            m_isDragging = true;
-            // Copy position — never hold a reference to the atom's mutable position
-            m_dragStart = QPointF(hitAtom->position().x(), hitAtom->position().y());
-            m_dragEnd = pos;
+            m_isDragging  = true;
+            m_dragStart   = hitAtom->position();
+            m_dragEnd     = pos;
         } else {
-            // Create new atom at click position, start bond from it
-            auto *newAtom = new Atom("C", QPointF(pos.x(), pos.y()), 0, QString(), m_molecule);
+            // Place a new atom and start dragging a bond from it
+            auto *newAtom = new Atom(m_activeElement, pos, 0, QString(), m_molecule);
             m_molecule->addAtom(newAtom);
             m_startAtomId = newAtom->atomId();
-            m_isDragging = true;
-            m_dragStart = QPointF(pos.x(), pos.y());
-            m_dragEnd = QPointF(pos.x(), pos.y());
+            m_isDragging  = true;
+            m_dragStart   = pos;
+            m_dragEnd     = pos;
         }
         emit canvasNeedsRepaint();
         return;
     }
 
-    // Default: clicking with no specific tool creates a carbon atom
+    // Default: place atom at click point
     if (!hitAtom) {
-        auto *newAtom = new Atom("C", QPointF(pos.x(), pos.y()), 0, QString(), m_molecule);
+        auto *newAtom = new Atom(m_activeElement, pos, 0, QString(), m_molecule);
         m_molecule->addAtom(newAtom);
         emit canvasNeedsRepaint();
     }
@@ -172,19 +174,25 @@ void ChemController::canvasPressed(const QPointF &pos)
 void ChemController::canvasDragged(const QPointF &pos)
 {
     if (m_isDragging && m_molecule) {
-        m_dragEnd = QPointF(pos.x(), pos.y());
+        m_dragEnd = pos;
         emit canvasNeedsRepaint();
     }
 }
 
 void ChemController::canvasReleased(const QPointF &pos)
 {
-    if (!m_isDragging || !m_molecule) {
-        m_isDragging = false;
+    // Always clear drag state — even if we return early.
+    // This is the KEY guard that prevents the dashed preview
+    // line from getting stuck when onCanceled fires instead
+    // of onReleased (macOS trackpad fast gestures).
+    const bool wasDragging = m_isDragging;
+    m_isDragging = false;
+
+    if (!wasDragging || !m_molecule) {
         m_startAtomId.clear();
+        emit canvasNeedsRepaint();
         return;
     }
-    m_isDragging = false;
 
     Atom *startAtom = m_molecule->getAtom(m_startAtomId);
     if (!startAtom) {
@@ -193,50 +201,40 @@ void ChemController::canvasReleased(const QPointF &pos)
         return;
     }
 
-    // Determine end atom
     Atom *endAtom = m_molecule->atomAtPoint(pos, ATOM_HIT_RADIUS);
 
-    // Don't create bond to self
+    // Don't bond to self
     if (endAtom && endAtom->atomId() == m_startAtomId) {
         m_startAtomId.clear();
         emit canvasNeedsRepaint();
         return;
     }
 
-    // Check if there's already a bond between these atoms — if so, upgrade it
+    // Upgrade existing bond if one already exists between these atoms
     if (endAtom) {
         Bond *existingBond = m_molecule->bondBetween(m_startAtomId, endAtom->atomId());
         if (existingBond) {
             Bond::BondType nextType = Bond::nextBondType(existingBond->bondType());
-            double currentValence = existingBond->bondValence();
-            // Create a temporary bond to get the new valence
             Bond tempBond(QString(), QString(), nextType);
-            double newValence = tempBond.bondValence();
-            double delta = newValence - currentValence;
-
-            // Check both atoms can accept the increased valence
+            double delta = tempBond.bondValence() - existingBond->bondValence();
             if (delta > 0) {
                 double used1 = m_molecule->usedValence(m_startAtomId);
                 int max1 = ElementData::instance()->maxValence(startAtom->elementSymbol());
                 double used2 = m_molecule->usedValence(endAtom->atomId());
                 int max2 = ElementData::instance()->maxValence(endAtom->elementSymbol());
-
                 if ((used1 + delta) > max1) {
-                    emit bondRejected(m_startAtomId,
-                                      startAtom->position().x(), startAtom->position().y());
+                    emit bondRejected(m_startAtomId, startAtom->position().x(), startAtom->position().y());
                     m_startAtomId.clear();
                     emit canvasNeedsRepaint();
                     return;
                 }
                 if ((used2 + delta) > max2) {
-                    emit bondRejected(endAtom->atomId(),
-                                      endAtom->position().x(), endAtom->position().y());
+                    emit bondRejected(endAtom->atomId(), endAtom->position().x(), endAtom->position().y());
                     m_startAtomId.clear();
                     emit canvasNeedsRepaint();
                     return;
                 }
             }
-
             existingBond->setBondType(nextType);
             validate();
             m_startAtomId.clear();
@@ -245,7 +243,7 @@ void ChemController::canvasReleased(const QPointF &pos)
         }
     }
 
-    // If no end atom, create one at the release position
+    // If no target atom, create one — but only if drag was long enough
     bool createdEndAtom = false;
     if (!endAtom) {
         if (QLineF(m_dragStart, pos).length() < 10.0) {
@@ -253,38 +251,28 @@ void ChemController::canvasReleased(const QPointF &pos)
             emit canvasNeedsRepaint();
             return;
         }
-        endAtom = new Atom("C", QPointF(pos.x(), pos.y()), 0, QString(), m_molecule);
+        endAtom = new Atom(m_activeElement, pos, 0, QString(), m_molecule);
         m_molecule->addAtom(endAtom);
         createdEndAtom = true;
     }
 
-    // Determine bond type from active tool
+    // Resolve bond type from tool name
     QString toolName = m_activeTool;
     toolName.replace("_bond", "");
     Bond::BondType bondType = Bond::bondTypeFromString(toolName);
-
-    // Create a temporary to get its valence for pre-check
     double newBondValence = Bond(QString(), QString(), bondType).bondValence();
 
-    // Pre-check valence before creating the bond
+    // Valence pre-check
     if (!checkValenceBeforeBond(m_startAtomId, endAtom->atomId(), newBondValence)) {
-        // Remove orphaned atom if we just created it and the bond was rejected
-        if (createdEndAtom) {
-            m_molecule->removeAtom(endAtom->atomId());
-        }
+        if (createdEndAtom) m_molecule->removeAtom(endAtom->atomId());
         m_startAtomId.clear();
         emit canvasNeedsRepaint();
         return;
     }
 
-    auto *bond = new Bond(m_startAtomId, endAtom->atomId(), bondType,
-                          QString(), m_molecule);
-
+    auto *bond = new Bond(m_startAtomId, endAtom->atomId(), bondType, QString(), m_molecule);
     if (!tryAddBond(bond)) {
-        // Remove orphaned atom if we just created it and the bond was rejected
-        if (createdEndAtom) {
-            m_molecule->removeAtom(endAtom->atomId());
-        }
+        if (createdEndAtom) m_molecule->removeAtom(endAtom->atomId());
     }
 
     m_startAtomId.clear();
@@ -303,13 +291,48 @@ void ChemController::addBenzeneAt(const QPointF &center, double radius)
     emit canvasNeedsRepaint();
 }
 
+void ChemController::addCyclohexaneAt(const QPointF &center, double radius)
+{
+    if (!m_molecule) return;
+    const QVector<QPointF> pts = GeometryUtils::regularPolygon(center, radius, 6);
+    QList<QString> ids;
+    for (const QPointF &pt : pts) {
+        auto *atom = new Atom(m_activeElement, pt, 0, QString(), m_molecule);
+        m_molecule->addAtom(atom);
+        ids.append(atom->atomId());
+    }
+    for (int i = 0; i < 6; ++i) {
+        auto *bond = new Bond(ids[i], ids[(i + 1) % 6], Bond::Single, QString(), m_molecule);
+        m_molecule->addBond(bond);
+    }
+    validate();
+    emit canvasNeedsRepaint();
+}
+
+void ChemController::addCyclopentaneAt(const QPointF &center, double radius)
+{
+    if (!m_molecule) return;
+    const QVector<QPointF> pts = GeometryUtils::regularPolygon(center, radius, 5);
+    QList<QString> ids;
+    for (const QPointF &pt : pts) {
+        auto *atom = new Atom(m_activeElement, pt, 0, QString(), m_molecule);
+        m_molecule->addAtom(atom);
+        ids.append(atom->atomId());
+    }
+    for (int i = 0; i < 5; ++i) {
+        auto *bond = new Bond(ids[i], ids[(i + 1) % 5], Bond::Single, QString(), m_molecule);
+        m_molecule->addBond(bond);
+    }
+    validate();
+    emit canvasNeedsRepaint();
+}
+
 void ChemController::changeAtomElement(const QString &atomId, const QString &newElement)
 {
+    if (!m_molecule) return;
     Atom *atom = m_molecule->getAtom(atomId);
     if (!atom) return;
-
     if (!ElementData::instance()->isValidElement(newElement)) return;
-
     atom->setElementSymbol(newElement);
     validate();
     emit canvasNeedsRepaint();
@@ -317,6 +340,7 @@ void ChemController::changeAtomElement(const QString &atomId, const QString &new
 
 void ChemController::clearCanvas()
 {
+    if (!m_molecule) return;
     m_molecule->clear();
     m_isDragging = false;
     m_startAtomId.clear();
@@ -336,7 +360,6 @@ bool ChemController::loadFromFile(const QString &filePath)
 {
     Molecule *loaded = FileUtils::instance()->loadFromJson(filePath, this);
     if (!loaded) return false;
-
     m_molecule->clear();
     m_molecule->merge(loaded);
     delete loaded;
@@ -355,7 +378,6 @@ bool ChemController::importMol(const QString &filePath)
 {
     Molecule *loaded = FileUtils::instance()->importFromMol(filePath, QPointF(300, 300), this);
     if (!loaded) return false;
-
     m_molecule->clear();
     m_molecule->merge(loaded);
     delete loaded;
@@ -367,29 +389,27 @@ bool ChemController::importMol(const QString &filePath)
 
 // --- Zoom ---
 
-void ChemController::zoomIn()  { setZoomFactor(m_zoomFactor * ZOOM_STEP); }
-void ChemController::zoomOut() { setZoomFactor(m_zoomFactor / ZOOM_STEP); }
+void ChemController::zoomIn()    { setZoomFactor(m_zoomFactor * ZOOM_STEP); }
+void ChemController::zoomOut()   { setZoomFactor(m_zoomFactor / ZOOM_STEP); }
 void ChemController::resetZoom() { setZoomFactor(1.0); }
 
-// --- Render data for QML ---
+// --- Render data ---
 
 QVariantList ChemController::getAtomRenderData() const
 {
     QVariantList result;
     if (!m_molecule) return result;
-
     for (Atom *atom : m_molecule->atoms()) {
         if (!atom) continue;
         QVariantMap data;
-        data["id"] = atom->atomId();
-        data["element"] = atom->elementSymbol();
-        data["x"] = atom->position().x();
-        data["y"] = atom->position().y();
-        data["charge"] = atom->charge();
+        data["id"]          = atom->atomId();
+        data["element"]     = atom->elementSymbol();
+        data["x"]           = atom->position().x();
+        data["y"]           = atom->position().y();
+        data["charge"]      = atom->charge();
         data["highlighted"] = atom->isHighlighted();
-        data["bondCount"] = atom->bondCount();
-        QColor color = ElementData::instance()->elementColor(atom->elementSymbol());
-        data["color"] = color.name();
+        data["bondCount"]   = atom->bondCount();
+        data["color"]       = ElementData::instance()->elementColor(atom->elementSymbol()).name();
         result.append(data);
     }
     return result;
@@ -399,20 +419,18 @@ QVariantList ChemController::getBondRenderData() const
 {
     QVariantList result;
     if (!m_molecule) return result;
-
     for (Bond *bond : m_molecule->bonds()) {
         if (!bond) continue;
         Atom *a1 = m_molecule->getAtom(bond->atom1Id());
         Atom *a2 = m_molecule->getAtom(bond->atom2Id());
         if (!a1 || !a2) continue;
-
         QVariantMap data;
-        data["id"] = bond->bondId();
-        data["x1"] = a1->position().x();
-        data["y1"] = a1->position().y();
-        data["x2"] = a2->position().x();
-        data["y2"] = a2->position().y();
-        data["type"] = Bond::bondTypeToString(bond->bondType());
+        data["id"]        = bond->bondId();
+        data["x1"]        = a1->position().x();
+        data["y1"]        = a1->position().y();
+        data["x2"]        = a2->position().x();
+        data["y2"]        = a2->position().y();
+        data["type"]      = Bond::bondTypeToString(bond->bondType());
         data["isInvalid"] = bond->isInvalid();
         result.append(data);
     }
@@ -446,7 +464,6 @@ void ChemController::eraseAtPoint(const QPointF &pos)
         return;
     }
 
-    // Check if clicking near a bond line
     const auto bondsCopy = m_molecule->bonds();
     for (Bond *bond : bondsCopy) {
         if (!bond) continue;
@@ -460,13 +477,11 @@ void ChemController::eraseAtPoint(const QPointF &pos)
         if (lenSq < 1e-9) continue;
 
         double t = qBound(0.0,
-                          ((pos.x() - line.p1().x()) * d.x() +
-                           (pos.y() - line.p1().y()) * d.y()) / lenSq,
-                          1.0);
+            ((pos.x() - line.p1().x()) * d.x() +
+             (pos.y() - line.p1().y()) * d.y()) / lenSq, 1.0);
         QPointF closest(line.p1().x() + t * d.x(), line.p1().y() + t * d.y());
-        double dist = QLineF(pos, closest).length();
 
-        if (dist < 10.0) {
+        if (QLineF(pos, closest).length() < 10.0) {
             m_molecule->removeBond(bond->bondId());
             validate();
             emit canvasNeedsRepaint();
@@ -477,23 +492,21 @@ void ChemController::eraseAtPoint(const QPointF &pos)
 
 bool ChemController::tryAddBond(Bond *bond)
 {
-    if (!bond || !m_molecule) {
-        delete bond;
-        return false;
-    }
+    if (!bond || !m_molecule) { delete bond; return false; }
 
-    // Final safety: verify both atoms exist
     Atom *a1 = m_molecule->getAtom(bond->atom1Id());
     Atom *a2 = m_molecule->getAtom(bond->atom2Id());
-    if (!a1 || !a2) {
-        delete bond;
-        return false;
-    }
+    if (!a1 || !a2) { delete bond; return false; }
 
-    // Block molecule signals during add+validate+potentially-remove to prevent
-    // cascading repaints that re-enter render data getters mid-mutation.
-    // The caller (canvasReleased) emits canvasNeedsRepaint after we return.
-    const bool wasBlocked = m_molecule->blockSignals(true);
+    // ── KEY FIX ──────────────────────────────────────────────────────────
+    // Do NOT blockSignals here. blockSignals prevented isInvalid from being
+    // set on the bond during validateMolecule(), which meant the
+    // "if (!valid && bond->isInvalid())" check always saw isInvalid=false
+    // and accepted every bond — OR caused the bond to be removed when it
+    // shouldn't have been. Remove the blockSignals entirely and let
+    // signals fire normally. The canvasNeedsRepaint from moleculeChanged
+    // is harmless here — the canvas refresh() call is cheap.
+    // ─────────────────────────────────────────────────────────────────────
 
     m_molecule->addBond(bond);
 
@@ -501,18 +514,17 @@ bool ChemController::tryAddBond(Bond *bond)
     bool accepted = true;
 
     if (!valid && bond->isInvalid()) {
-        // The newly added bond caused invalidity — remove it
+        // Bond caused a valence violation — remove it
         m_molecule->removeBond(bond->bondId());
         ChemistryUtils::instance()->validateMolecule(m_molecule);
         accepted = false;
     }
 
-    m_molecule->blockSignals(wasBlocked);
-
-    // Emit deferred notifications now that the molecule is in a consistent state
     m_infoDirty = true;
     emit moleculeInfoChanged();
     emit moleculeValidated(valid);
+    // canvasNeedsRepaint is emitted by canvasReleased() after we return.
+    // No need to emit it here — doing so would cause a double repaint.
 
     return accepted;
 }

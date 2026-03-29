@@ -61,6 +61,7 @@ ApplicationWindow {
                 }
                 onElementSelected: function(element) {
                     AppState.setActiveElement(element)
+                    controller.setActiveElement(element)
                 }
                 onActiveNavIndexChanged: {
                     AppState.setActiveNav(activeNavIndex)

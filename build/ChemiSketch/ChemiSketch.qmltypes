@@ -191,19 +191,27 @@ Module {
             index: 1
         }
         Property {
+            name: "activeElement"
+            type: "QString"
+            read: "activeElement"
+            write: "setActiveElement"
+            notify: "activeElementChanged"
+            index: 2
+        }
+        Property {
             name: "isDarkTheme"
             type: "bool"
             read: "isDarkTheme"
             write: "setIsDarkTheme"
             notify: "isDarkThemeChanged"
-            index: 2
+            index: 3
         }
         Property {
             name: "moleculeInfo"
             type: "QVariantMap"
             read: "moleculeInfo"
             notify: "moleculeInfoChanged"
-            index: 3
+            index: 4
             isReadonly: true
         }
         Property {
@@ -212,9 +220,10 @@ Module {
             read: "zoomFactor"
             write: "setZoomFactor"
             notify: "zoomFactorChanged"
-            index: 4
+            index: 5
         }
         Signal { name: "activeToolChanged" }
+        Signal { name: "activeElementChanged" }
         Signal { name: "isDarkThemeChanged" }
         Signal { name: "moleculeInfoChanged" }
         Signal { name: "zoomFactorChanged" }
@@ -228,6 +237,10 @@ Module {
             Parameter { name: "atomId"; type: "QString" }
             Parameter { name: "x"; type: "double" }
             Parameter { name: "y"; type: "double" }
+        }
+        Method {
+            name: "setActiveElement"
+            Parameter { name: "element"; type: "QString" }
         }
         Method {
             name: "canvasPressed"
@@ -261,6 +274,26 @@ Module {
         }
         Method {
             name: "addBenzeneAt"
+            isCloned: true
+            Parameter { name: "center"; type: "QPointF" }
+        }
+        Method {
+            name: "addCyclohexaneAt"
+            Parameter { name: "center"; type: "QPointF" }
+            Parameter { name: "radius"; type: "double" }
+        }
+        Method {
+            name: "addCyclohexaneAt"
+            isCloned: true
+            Parameter { name: "center"; type: "QPointF" }
+        }
+        Method {
+            name: "addCyclopentaneAt"
+            Parameter { name: "center"; type: "QPointF" }
+            Parameter { name: "radius"; type: "double" }
+        }
+        Method {
+            name: "addCyclopentaneAt"
             isCloned: true
             Parameter { name: "center"; type: "QPointF" }
         }

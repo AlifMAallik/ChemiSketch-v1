@@ -173,71 +173,79 @@ Rectangle {
             }
 
             // Sketch tools (visible when Sketch nav active)
+            // leftPadding/rightPadding removed — each section wrapped in an Item
+            // that applies the margin via x + width so CollapsibleSection.width
+            // resolves correctly through its own "width: parent.width" binding.
             Column {
                 width: parent.width
                 visible: root.activeNavIndex === 0
                 spacing: Theme.spacingMd
-                leftPadding: Theme.spacingLg
-                rightPadding: Theme.spacingLg
                 topPadding: Theme.spacingSm
 
                 // BONDS section
-                CollapsibleSection {
-                    title: "BONDS"
+                Item {
+                    x: Theme.spacingLg
+                    width: parent.width - 2 * Theme.spacingLg
+                    height: bondsSection.height
 
-                    Grid {
-                        columns: 2
-                        spacing: Theme.spacingSm
-                        width: parent.width
+                    CollapsibleSection {
+                        id: bondsSection
+                        title: "BONDS"
 
-                        Repeater {
-                            model: [
-                                { label: "Single", tool: "single_bond", icon: "\u2014" },
-                                { label: "Double", tool: "double_bond", icon: "=" },
-                                { label: "Triple", tool: "triple_bond", icon: "\u2261" },
-                                { label: "Aromatic", tool: "aromatic", icon: "\u25CB" }
-                            ]
+                        Grid {
+                            columns: 2
+                            spacing: Theme.spacingSm
+                            width: parent.width
 
-                            Rectangle {
-                                width: (parent.width - Theme.spacingSm) / 2
-                                height: 40
-                                radius: Theme.radiusSm
-                                color: root.activeTool === modelData.tool ? Qt.rgba(0.31, 0.62, 1.0, 0.12) : Theme.bgCard
-                                border.color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.border
-                                border.width: root.activeTool === modelData.tool ? 1.5 : 1
-                                antialiasing: true
-                                scale: root.activeTool === modelData.tool ? 1.05 : 1.0
+                            Repeater {
+                                model: [
+                                    { label: "Single", tool: "single_bond", icon: "\u2014" },
+                                    { label: "Double", tool: "double_bond", icon: "=" },
+                                    { label: "Triple", tool: "triple_bond", icon: "\u2261" },
+                                    { label: "Aromatic", tool: "aromatic", icon: "\u25CB" }
+                                ]
 
-                                Behavior on scale {
-                                    SpringAnimation { spring: 3; damping: 0.6 }
-                                }
-                                Behavior on border.color { ColorAnimation { duration: Theme.animFast } }
+                                Rectangle {
+                                    width: (parent.width - Theme.spacingSm) / 2
+                                    height: 52
+                                    radius: Theme.radiusSm
+                                    color: root.activeTool === modelData.tool ? Qt.rgba(0.31, 0.62, 1.0, 0.12) : Theme.bgCard
+                                    border.color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.border
+                                    border.width: root.activeTool === modelData.tool ? 1.5 : 1
+                                    antialiasing: true
+                                    scale: root.activeTool === modelData.tool ? 1.05 : 1.0
 
-                                Column {
-                                    anchors.centerIn: parent
-                                    spacing: 2
-
-                                    Text {
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        text: modelData.icon
-                                        font.pixelSize: 14
-                                        color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.textSecondary
+                                    Behavior on scale {
+                                        SpringAnimation { spring: 3; damping: 0.6 }
                                     }
-                                    Text {
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        text: modelData.label
-                                        font.family: Theme.fontFamily
-                                        font.pixelSize: 9
-                                        color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.textMuted
-                                    }
-                                }
+                                    Behavior on border.color { ColorAnimation { duration: Theme.animFast } }
 
-                                MouseArea {
-                                    anchors.fill: parent
-                                    cursorShape: Qt.PointingHandCursor
-                                    onClicked: {
-                                        root.activeTool = modelData.tool
-                                        root.toolSelected(modelData.tool)
+                                    Column {
+                                        anchors.centerIn: parent
+                                        spacing: 2
+
+                                        Text {
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            text: modelData.icon
+                                            font.pixelSize: 14
+                                            color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.textSecondary
+                                        }
+                                        Text {
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            text: modelData.label
+                                            font.family: Theme.fontFamily
+                                            font.pixelSize: 11
+                                            color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.textMuted
+                                        }
+                                    }
+
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        onClicked: {
+                                            root.activeTool = modelData.tool
+                                            root.toolSelected(modelData.tool)
+                                        }
                                     }
                                 }
                             }
@@ -246,124 +254,138 @@ Rectangle {
                 }
 
                 // ATOMS section
-                CollapsibleSection {
-                    title: "ATOMS"
+                Item {
+                    x: Theme.spacingLg
+                    width: parent.width - 2 * Theme.spacingLg
+                    height: atomsSection.height
 
-                    Flow {
-                        width: parent.width
-                        spacing: Theme.spacingXs
+                    CollapsibleSection {
+                        id: atomsSection
+                        title: "ATOMS"
 
-                        Repeater {
-                            model: ["C", "N", "O", "S", "P", "F", "Cl", "Br", "I", "H"]
+                        Flow {
+                            width: parent.width
+                            spacing: Theme.spacingXs
 
+                            Repeater {
+                                model: ["C", "N", "O", "S", "P", "F", "Cl", "Br", "I", "H"]
+
+                                Rectangle {
+                                    width: modelData.length > 1 ? 36 : 30
+                                    height: 28
+                                    radius: Theme.radiusPill
+                                    color: root.activeElement === modelData ? Theme.accentBlue : Theme.bgCard
+                                    border.color: root.activeElement === modelData ? Theme.accentBlue : Theme.border
+                                    border.width: 1
+                                    antialiasing: true
+
+                                    Behavior on color { ColorAnimation { duration: Theme.animFast } }
+
+                                    Text {
+                                        anchors.centerIn: parent
+                                        text: modelData
+                                        font.family: Theme.fontFamily
+                                        font.pixelSize: Theme.fontSm
+                                        font.weight: Font.DemiBold
+                                        color: root.activeElement === modelData ? "#FFFFFF" : Theme.textPrimary
+                                    }
+
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        onClicked: {
+                                            root.activeElement = modelData
+                                            root.elementSelected(modelData)
+                                        }
+                                    }
+                                }
+                            }
+
+                            // + More button
                             Rectangle {
-                                width: modelData.length > 1 ? 36 : 30
-                                height: 28
+                                width: 50; height: 28
                                 radius: Theme.radiusPill
-                                color: root.activeElement === modelData ? Theme.accentBlue : Theme.bgCard
-                                border.color: root.activeElement === modelData ? Theme.accentBlue : Theme.border
+                                color: "transparent"
+                                border.color: Theme.border
                                 border.width: 1
-                                antialiasing: true
-
-                                Behavior on color { ColorAnimation { duration: Theme.animFast } }
 
                                 Text {
                                     anchors.centerIn: parent
-                                    text: modelData
+                                    text: "+ More"
                                     font.family: Theme.fontFamily
-                                    font.pixelSize: Theme.fontSm
-                                    font.weight: Font.DemiBold
-                                    color: root.activeElement === modelData ? "#FFFFFF" : Theme.textPrimary
+                                    font.pixelSize: 9
+                                    color: Theme.textSecondary
                                 }
 
                                 MouseArea {
                                     anchors.fill: parent
                                     cursorShape: Qt.PointingHandCursor
-                                    onClicked: {
-                                        root.activeElement = modelData
-                                        root.elementSelected(modelData)
-                                    }
                                 }
-                            }
-                        }
-
-                        // + More button
-                        Rectangle {
-                            width: 50; height: 28
-                            radius: Theme.radiusPill
-                            color: "transparent"
-                            border.color: Theme.border
-                            border.width: 1
-
-                            Text {
-                                anchors.centerIn: parent
-                                text: "+ More"
-                                font.family: Theme.fontFamily
-                                font.pixelSize: 9
-                                color: Theme.textSecondary
-                            }
-
-                            MouseArea {
-                                anchors.fill: parent
-                                cursorShape: Qt.PointingHandCursor
                             }
                         }
                     }
                 }
 
                 // TOOLS section
-                CollapsibleSection {
-                    title: "TOOLS"
+                Item {
+                    x: Theme.spacingLg
+                    width: parent.width - 2 * Theme.spacingLg
+                    height: toolsSection.height
 
-                    Grid {
-                        columns: 3
-                        spacing: Theme.spacingSm
-                        width: parent.width
+                    CollapsibleSection {
+                        id: toolsSection
+                        title: "TOOLS"
 
-                        Repeater {
-                            model: [
-                                { label: "Eraser", tool: "eraser", icon: "\u2421" },
-                                { label: "Lasso", tool: "lasso", icon: "\u2B55" },
-                                { label: "Move", tool: "move", icon: "\u2725" },
-                                { label: "Charge+", tool: "charge_plus", icon: "\u207A" },
-                                { label: "Charge-", tool: "charge_minus", icon: "\u207B" },
-                                { label: "Clean", tool: "clean", icon: "\u2728" }
-                            ]
+                        Grid {
+                            columns: 3
+                            spacing: Theme.spacingSm
+                            width: parent.width
 
-                            Rectangle {
-                                width: (parent.width - 2 * Theme.spacingSm) / 3
-                                height: 36
-                                radius: Theme.radiusSm
-                                color: root.activeTool === modelData.tool ? Qt.rgba(0.31, 0.62, 1.0, 0.12) : Theme.bgCard
-                                border.color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.border
-                                border.width: 1
-                                antialiasing: true
+                            Repeater {
+                                model: [
+                                    { label: "Eraser", tool: "eraser", icon: "\u2421" },
+                                    { label: "Lasso", tool: "lasso", icon: "\u2B55" },
+                                    { label: "Move", tool: "move", icon: "\u2725" },
+                                    { label: "Charge+", tool: "charge_plus", icon: "\u207A" },
+                                    { label: "Charge-", tool: "charge_minus", icon: "\u207B" },
+                                    { label: "Clean", tool: "clean", icon: "\u2728" }
+                                ]
 
-                                Column {
-                                    anchors.centerIn: parent
-                                    spacing: 1
+                                Rectangle {
+                                    width: (parent.width - 2 * Theme.spacingSm) / 3
+                                    height: 44
+                                    radius: Theme.radiusSm
+                                    color: root.activeTool === modelData.tool ? Qt.rgba(0.31, 0.62, 1.0, 0.12) : Theme.bgCard
+                                    border.color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.border
+                                    border.width: 1
+                                    antialiasing: true
 
-                                    Text {
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        text: modelData.icon
-                                        font.pixelSize: 12
-                                        color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.textSecondary
+                                    Column {
+                                        anchors.centerIn: parent
+                                        spacing: 1
+
+                                        Text {
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            text: modelData.icon
+                                            font.pixelSize: 12
+                                            color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.textSecondary
+                                        }
+                                        Text {
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            text: modelData.label
+                                            font.family: Theme.fontFamily
+                                            font.pixelSize: 10
+                                            color: Theme.textMuted
+                                        }
                                     }
-                                    Text {
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        text: modelData.label
-                                        font.family: Theme.fontFamily
-                                        font.pixelSize: 8
-                                        color: Theme.textMuted
-                                    }
-                                }
 
-                                MouseArea {
-                                    anchors.fill: parent
-                                    cursorShape: Qt.PointingHandCursor
-                                    onClicked: {
-                                        root.activeTool = modelData.tool
-                                        root.toolSelected(modelData.tool)
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        onClicked: {
+                                            root.activeTool = modelData.tool
+                                            root.toolSelected(modelData.tool)
+                                        }
                                     }
                                 }
                             }
@@ -372,58 +394,65 @@ Rectangle {
                 }
 
                 // RING TEMPLATES section
-                CollapsibleSection {
-                    title: "RING TEMPLATES"
+                Item {
+                    x: Theme.spacingLg
+                    width: parent.width - 2 * Theme.spacingLg
+                    height: ringSection.height
 
-                    Row {
-                        spacing: Theme.spacingSm
-                        width: parent.width
+                    CollapsibleSection {
+                        id: ringSection
+                        title: "RING TEMPLATES"
 
-                        Repeater {
-                            model: [
-                                { label: "Benzene", tool: "benzene" },
-                                { label: "Cyclohexane", tool: "cyclohexane" },
-                                { label: "Cyclopentane", tool: "cyclopentane" }
-                            ]
+                        Row {
+                            spacing: Theme.spacingSm
+                            width: parent.width
 
-                            Rectangle {
-                                width: (parent.width - 2 * Theme.spacingSm) / 3
-                                height: 56
-                                radius: Theme.radiusSm
-                                color: Theme.bgCard
-                                border.color: Theme.border
-                                border.width: 1
-                                antialiasing: true
+                            Repeater {
+                                model: [
+                                    { label: "Benzene", tool: "benzene" },
+                                    { label: "Cyclohexane", tool: "cyclohexane" },
+                                    { label: "Cyclopentane", tool: "cyclopentane" }
+                                ]
 
-                                Column {
-                                    anchors.centerIn: parent
-                                    spacing: 4
+                                Rectangle {
+                                    width: (parent.width - 2 * Theme.spacingSm) / 3
+                                    height: 56
+                                    radius: Theme.radiusSm
+                                    color: root.activeTool === modelData.tool ? Qt.rgba(0.31, 0.62, 1.0, 0.12) : Theme.bgCard
+                                    border.color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.border
+                                    border.width: root.activeTool === modelData.tool ? 1.5 : 1
+                                    antialiasing: true
 
-                                    // Simple ring icon
-                                    Rectangle {
-                                        width: 24; height: 24
-                                        radius: modelData.tool === "cyclopentane" ? 12 : 4
-                                        color: "transparent"
-                                        border.color: Theme.textSecondary
-                                        border.width: 1.5
-                                        anchors.horizontalCenter: parent.horizontalCenter
+                                    Column {
+                                        anchors.centerIn: parent
+                                        spacing: 4
+
+                                        // Simple ring icon
+                                        Rectangle {
+                                            width: 24; height: 24
+                                            radius: modelData.tool === "cyclopentane" ? 12 : 4
+                                            color: "transparent"
+                                            border.color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.textSecondary
+                                            border.width: 1.5
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                        }
+
+                                        Text {
+                                            anchors.horizontalCenter: parent.horizontalCenter
+                                            text: modelData.label
+                                            font.family: Theme.fontFamily
+                                            font.pixelSize: 8
+                                            color: root.activeTool === modelData.tool ? Theme.accentBlue : Theme.textMuted
+                                        }
                                     }
 
-                                    Text {
-                                        anchors.horizontalCenter: parent.horizontalCenter
-                                        text: modelData.label
-                                        font.family: Theme.fontFamily
-                                        font.pixelSize: 8
-                                        color: Theme.textMuted
-                                    }
-                                }
-
-                                MouseArea {
-                                    anchors.fill: parent
-                                    cursorShape: Qt.PointingHandCursor
-                                    onClicked: {
-                                        root.activeTool = modelData.tool
-                                        root.toolSelected(modelData.tool)
+                                    MouseArea {
+                                        anchors.fill: parent
+                                        cursorShape: Qt.PointingHandCursor
+                                        onClicked: {
+                                            root.activeTool = modelData.tool
+                                            root.toolSelected(modelData.tool)
+                                        }
                                     }
                                 }
                             }
@@ -432,47 +461,54 @@ Rectangle {
                 }
 
                 // AI ASSIST section
-                CollapsibleSection {
-                    title: "AI ASSIST"
+                Item {
+                    x: Theme.spacingLg
+                    width: parent.width - 2 * Theme.spacingLg
+                    height: aiSection.height
 
-                    Rectangle {
-                        width: parent.width
-                        height: 56
-                        radius: Theme.radiusMd
-                        antialiasing: true
+                    CollapsibleSection {
+                        id: aiSection
+                        title: "AI ASSIST"
 
-                        gradient: Gradient {
-                            GradientStop { position: 0.0; color: Qt.rgba(0.64, 0.44, 0.97, 0.15) }
-                            GradientStop { position: 1.0; color: Qt.rgba(0.64, 0.44, 0.97, 0.05) }
-                        }
+                        Rectangle {
+                            width: parent.width
+                            height: 56
+                            radius: Theme.radiusMd
+                            antialiasing: true
 
-                        border.color: Qt.rgba(0.64, 0.44, 0.97, 0.3)
-                        border.width: 1
-
-                        Row {
-                            anchors.centerIn: parent
-                            spacing: Theme.spacingSm
-
-                            Text {
-                                text: "\u2728"
-                                font.pixelSize: 16
-                                color: Theme.accentPurple
-                                anchors.verticalCenter: parent.verticalCenter
+                            gradient: Gradient {
+                                GradientStop { position: 0.0; color: Qt.rgba(0.64, 0.44, 0.97, 0.15) }
+                                GradientStop { position: 1.0; color: Qt.rgba(0.64, 0.44, 0.97, 0.05) }
                             }
 
-                            Text {
-                                text: "Suggest Structure"
-                                font.family: Theme.fontFamily
-                                font.pixelSize: Theme.fontSm
-                                font.weight: Font.DemiBold
-                                color: Theme.accentPurple
-                                anchors.verticalCenter: parent.verticalCenter
-                            }
-                        }
+                            border.color: Qt.rgba(0.64, 0.44, 0.97, 0.3)
+                            border.width: 1
 
-                        MouseArea {
-                            anchors.fill: parent
-                            cursorShape: Qt.PointingHandCursor
+                            Row {
+                                anchors.centerIn: parent
+                                spacing: Theme.spacingSm
+
+                                Text {
+                                    text: "\u2728"
+                                    font.pixelSize: 16
+                                    color: Theme.accentPurple
+                                    anchors.verticalCenter: parent.verticalCenter
+                                }
+
+                                Text {
+                                    text: "Suggest Structure"
+                                    font.family: Theme.fontFamily
+                                    font.pixelSize: Theme.fontSm
+                                    font.weight: Font.DemiBold
+                                    color: Theme.accentPurple
+                                    anchors.verticalCenter: parent.verticalCenter
+                                }
+                            }
+
+                            MouseArea {
+                                anchors.fill: parent
+                                cursorShape: Qt.PointingHandCursor
+                            }
                         }
                     }
                 }

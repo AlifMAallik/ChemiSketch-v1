@@ -14,24 +14,12 @@
                     "access": "public",
                     "arguments": [
                         {
-                            "name": "pos",
-                            "type": "QPointF"
-                        }
-                    ],
-                    "index": 7,
-                    "name": "canvasPressed",
-                    "returnType": "void"
-                },
-                {
-                    "access": "public",
-                    "arguments": [
-                        {
-                            "name": "pos",
-                            "type": "QPointF"
+                            "name": "element",
+                            "type": "QString"
                         }
                     ],
                     "index": 8,
-                    "name": "canvasDragged",
+                    "name": "setActiveElement",
                     "returnType": "void"
                 },
                 {
@@ -43,6 +31,30 @@
                         }
                     ],
                     "index": 9,
+                    "name": "canvasPressed",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "pos",
+                            "type": "QPointF"
+                        }
+                    ],
+                    "index": 10,
+                    "name": "canvasDragged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "pos",
+                            "type": "QPointF"
+                        }
+                    ],
+                    "index": 11,
                     "name": "canvasReleased",
                     "returnType": "void"
                 },
@@ -58,7 +70,7 @@
                             "type": "double"
                         }
                     ],
-                    "index": 10,
+                    "index": 12,
                     "isConst": true,
                     "name": "canAtomAcceptBond",
                     "returnType": "bool"
@@ -71,7 +83,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 11,
+                    "index": 13,
                     "isConst": true,
                     "name": "remainingValence",
                     "returnType": "double"
@@ -88,7 +100,7 @@
                             "type": "double"
                         }
                     ],
-                    "index": 12,
+                    "index": 14,
                     "name": "addBenzeneAt",
                     "returnType": "void"
                 },
@@ -100,9 +112,67 @@
                             "type": "QPointF"
                         }
                     ],
-                    "index": 13,
+                    "index": 15,
                     "isCloned": true,
                     "name": "addBenzeneAt",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "center",
+                            "type": "QPointF"
+                        },
+                        {
+                            "name": "radius",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 16,
+                    "name": "addCyclohexaneAt",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "center",
+                            "type": "QPointF"
+                        }
+                    ],
+                    "index": 17,
+                    "isCloned": true,
+                    "name": "addCyclohexaneAt",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "center",
+                            "type": "QPointF"
+                        },
+                        {
+                            "name": "radius",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 18,
+                    "name": "addCyclopentaneAt",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "center",
+                            "type": "QPointF"
+                        }
+                    ],
+                    "index": 19,
+                    "isCloned": true,
+                    "name": "addCyclopentaneAt",
                     "returnType": "void"
                 },
                 {
@@ -117,13 +187,13 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 14,
+                    "index": 20,
                     "name": "changeAtomElement",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 15,
+                    "index": 21,
                     "name": "clearCanvas",
                     "returnType": "void"
                 },
@@ -135,7 +205,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 16,
+                    "index": 22,
                     "isConst": true,
                     "name": "saveToFile",
                     "returnType": "bool"
@@ -148,7 +218,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 17,
+                    "index": 23,
                     "name": "loadFromFile",
                     "returnType": "bool"
                 },
@@ -160,7 +230,7 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 18,
+                    "index": 24,
                     "isConst": true,
                     "name": "exportMol",
                     "returnType": "bool"
@@ -173,45 +243,45 @@
                             "type": "QString"
                         }
                     ],
-                    "index": 19,
+                    "index": 25,
                     "name": "importMol",
                     "returnType": "bool"
                 },
                 {
                     "access": "public",
-                    "index": 20,
+                    "index": 26,
                     "name": "zoomIn",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 21,
+                    "index": 27,
                     "name": "zoomOut",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 22,
+                    "index": 28,
                     "name": "resetZoom",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
-                    "index": 23,
+                    "index": 29,
                     "isConst": true,
                     "name": "getAtomRenderData",
                     "returnType": "QVariantList"
                 },
                 {
                     "access": "public",
-                    "index": 24,
+                    "index": 30,
                     "isConst": true,
                     "name": "getBondRenderData",
                     "returnType": "QVariantList"
                 },
                 {
                     "access": "public",
-                    "index": 25,
+                    "index": 31,
                     "isConst": true,
                     "name": "getTempLine",
                     "returnType": "QVariantMap"
@@ -252,6 +322,21 @@
                     "designable": true,
                     "final": false,
                     "index": 2,
+                    "name": "activeElement",
+                    "notify": "activeElementChanged",
+                    "read": "activeElement",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setActiveElement"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
                     "name": "isDarkTheme",
                     "notify": "isDarkThemeChanged",
                     "read": "isDarkTheme",
@@ -266,7 +351,7 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 3,
+                    "index": 4,
                     "name": "moleculeInfo",
                     "notify": "moleculeInfoChanged",
                     "read": "moleculeInfo",
@@ -280,7 +365,7 @@
                     "constant": false,
                     "designable": true,
                     "final": false,
-                    "index": 4,
+                    "index": 5,
                     "name": "zoomFactor",
                     "notify": "zoomFactorChanged",
                     "read": "zoomFactor",
@@ -303,24 +388,30 @@
                 {
                     "access": "public",
                     "index": 1,
-                    "name": "isDarkThemeChanged",
+                    "name": "activeElementChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 2,
-                    "name": "moleculeInfoChanged",
+                    "name": "isDarkThemeChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 3,
-                    "name": "zoomFactorChanged",
+                    "name": "moleculeInfoChanged",
                     "returnType": "void"
                 },
                 {
                     "access": "public",
                     "index": 4,
+                    "name": "zoomFactorChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 5,
                     "name": "canvasNeedsRepaint",
                     "returnType": "void"
                 },
@@ -332,7 +423,7 @@
                             "type": "bool"
                         }
                     ],
-                    "index": 5,
+                    "index": 6,
                     "name": "moleculeValidated",
                     "returnType": "void"
                 },
@@ -352,7 +443,7 @@
                             "type": "double"
                         }
                     ],
-                    "index": 6,
+                    "index": 7,
                     "name": "bondRejected",
                     "returnType": "void"
                 }

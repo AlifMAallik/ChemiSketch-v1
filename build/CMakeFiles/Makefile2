@@ -454,8 +454,8 @@ CMakeFiles/ChemiSketch_copy_res.dir/clean:
 # Target rules for target CMakeFiles/module_ChemiSketch_aotstats_target.dir
 
 # All Build rule for target.
-CMakeFiles/module_ChemiSketch_aotstats_target.dir/all: CMakeFiles/ChemiSketch_qmltyperegistration.dir/all
 CMakeFiles/module_ChemiSketch_aotstats_target.dir/all: CMakeFiles/ChemiSketch_autogen_timestamp_deps.dir/all
+CMakeFiles/module_ChemiSketch_aotstats_target.dir/all: CMakeFiles/ChemiSketch_qmltyperegistration.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_ChemiSketch_aotstats_target.dir/build.make CMakeFiles/module_ChemiSketch_aotstats_target.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_ChemiSketch_aotstats_target.dir/build.make CMakeFiles/module_ChemiSketch_aotstats_target.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles --progress-num=65,66,67,68,69,70,71,72,73,74,75,76,77,78,79 "Built target module_ChemiSketch_aotstats_target"
@@ -473,8 +473,8 @@ module_ChemiSketch_aotstats_target: CMakeFiles/module_ChemiSketch_aotstats_targe
 .PHONY : module_ChemiSketch_aotstats_target
 
 # codegen rule for target.
-CMakeFiles/module_ChemiSketch_aotstats_target.dir/codegen: CMakeFiles/ChemiSketch_qmltyperegistration.dir/all
 CMakeFiles/module_ChemiSketch_aotstats_target.dir/codegen: CMakeFiles/ChemiSketch_autogen_timestamp_deps.dir/all
+CMakeFiles/module_ChemiSketch_aotstats_target.dir/codegen: CMakeFiles/ChemiSketch_qmltyperegistration.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/module_ChemiSketch_aotstats_target.dir/build.make CMakeFiles/module_ChemiSketch_aotstats_target.dir/codegen
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles --progress-num=65,66,67,68,69,70,71,72,73,74,75,76,77,78,79 "Finished codegen for target module_ChemiSketch_aotstats_target"
 .PHONY : CMakeFiles/module_ChemiSketch_aotstats_target.dir/codegen

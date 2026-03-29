@@ -69,14 +69,14 @@ include CMakeFiles/ChemiSketch.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ChemiSketch.dir/flags.make
 
-meta_types/qt6chemisketch_metatypes.json.gen: /opt/homebrew/share/qt/libexec/moc
-meta_types/qt6chemisketch_metatypes.json.gen: meta_types/ChemiSketch_json_file_list.txt
+meta_types/qt6chemisketch_debug_metatypes.json.gen: /opt/homebrew/share/qt/libexec/moc
+meta_types/qt6chemisketch_debug_metatypes.json.gen: meta_types/ChemiSketch_json_file_list.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Running moc --collect-json for target ChemiSketch"
-	/opt/homebrew/share/qt/libexec/moc -o /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/qt6chemisketch_metatypes.json.gen --collect-json @/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/ChemiSketch_json_file_list.txt
-	/opt/homebrew/bin/cmake -E copy_if_different /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/qt6chemisketch_metatypes.json.gen /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/qt6chemisketch_metatypes.json
+	/opt/homebrew/share/qt/libexec/moc -o /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/qt6chemisketch_debug_metatypes.json.gen --collect-json @/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/ChemiSketch_json_file_list.txt
+	/opt/homebrew/bin/cmake -E copy_if_different /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/qt6chemisketch_debug_metatypes.json.gen /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/qt6chemisketch_debug_metatypes.json
 
 chemisketch_qmltyperegistrations.cpp: qmltypes/ChemiSketch_foreign_types.txt
-chemisketch_qmltyperegistrations.cpp: meta_types/qt6chemisketch_metatypes.json
+chemisketch_qmltyperegistrations.cpp: meta_types/qt6chemisketch_debug_metatypes.json
 chemisketch_qmltyperegistrations.cpp: /opt/homebrew/share/qt/libexec/qmltyperegistrar
 chemisketch_qmltyperegistrations.cpp: /opt/homebrew/share/qt/metatypes/qt6core_release_metatypes.json
 chemisketch_qmltyperegistrations.cpp: /opt/homebrew/share/qt/metatypes/qt6qml_release_metatypes.json
@@ -90,7 +90,7 @@ chemisketch_qmltyperegistrations.cpp: /opt/homebrew/share/qt/metatypes/qt6opengl
 chemisketch_qmltyperegistrations.cpp: /opt/homebrew/share/qt/metatypes/qt6quickcontrols2_release_metatypes.json
 chemisketch_qmltyperegistrations.cpp: /opt/homebrew/share/qt/metatypes/qt6multimedia_release_metatypes.json
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic QML type registration for target ChemiSketch"
-	/opt/homebrew/share/qt/libexec/qmltyperegistrar --generate-qmltypes=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch/ChemiSketch.qmltypes --import-name=ChemiSketch --major-version=1 --minor-version=0 @/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/qmltypes/ChemiSketch_foreign_types.txt -o /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/chemisketch_qmltyperegistrations.cpp /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/qt6chemisketch_metatypes.json
+	/opt/homebrew/share/qt/libexec/qmltyperegistrar --generate-qmltypes=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch/ChemiSketch.qmltypes --import-name=ChemiSketch --major-version=1 --minor-version=0 @/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/qmltypes/ChemiSketch_foreign_types.txt -o /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/chemisketch_qmltyperegistrations.cpp /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/qt6chemisketch_debug_metatypes.json
 	/opt/homebrew/bin/cmake -E make_directory /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/.qt/qmltypes
 	/opt/homebrew/bin/cmake -E touch /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/.qt/qmltypes/ChemiSketch.qmltypes
 
@@ -315,7 +315,7 @@ ChemiSketch/ChemiSketch.qmltypes: chemisketch_qmltyperegistrations.cpp
 ChemiSketch_autogen/timestamp: /opt/homebrew/share/qt/libexec/moc
 ChemiSketch_autogen/timestamp: CMakeFiles/ChemiSketch.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Automatic MOC and UIC for target ChemiSketch"
-	/opt/homebrew/bin/cmake -E cmake_autogen /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles/ChemiSketch_autogen.dir/AutogenInfo.json ""
+	/opt/homebrew/bin/cmake -E cmake_autogen /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles/ChemiSketch_autogen.dir/AutogenInfo.json Debug
 	/opt/homebrew/bin/cmake -E touch /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/timestamp
 
 ChemiSketch_autogen/3YJK5W5UP7/qrc_assets.cpp: /Users/jacob/Documents/ChemiSketch-master/chemisketch/resources/assets.qrc
@@ -323,15 +323,15 @@ ChemiSketch_autogen/3YJK5W5UP7/qrc_assets.cpp: CMakeFiles/ChemiSketch_autogen.di
 ChemiSketch_autogen/3YJK5W5UP7/qrc_assets.cpp: /opt/homebrew/share/qt/libexec/rcc
 ChemiSketch_autogen/3YJK5W5UP7/qrc_assets.cpp: /opt/homebrew/share/qt/libexec/rcc
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Automatic RCC for resources/assets.qrc"
-	/opt/homebrew/bin/cmake -E cmake_autorcc /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles/ChemiSketch_autogen.dir/AutoRcc_assets_3YJK5W5UP7_Info.json 
+	/opt/homebrew/bin/cmake -E cmake_autorcc /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles/ChemiSketch_autogen.dir/AutoRcc_assets_3YJK5W5UP7_Info.json Debug
 
 meta_types/ChemiSketch_json_file_list.txt: /opt/homebrew/share/qt/libexec/cmake_automoc_parser
 meta_types/ChemiSketch_json_file_list.txt: ChemiSketch_autogen/timestamp
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Running AUTOMOC file extraction for target ChemiSketch"
 	/opt/homebrew/share/qt/libexec/cmake_automoc_parser --cmake-autogen-cache-file /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles/ChemiSketch_autogen.dir/ParseCache.txt --cmake-autogen-info-file /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles/ChemiSketch_autogen.dir/AutogenInfo.json --output-file-path /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/ChemiSketch_json_file_list.txt --timestamp-file-path /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/meta_types/ChemiSketch_json_file_list.txt.timestamp --cmake-autogen-include-dir-path /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/include
 
-meta_types/qt6chemisketch_metatypes.json: meta_types/qt6chemisketch_metatypes.json.gen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating meta_types/qt6chemisketch_metatypes.json"
+meta_types/qt6chemisketch_debug_metatypes.json: meta_types/qt6chemisketch_debug_metatypes.json.gen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating meta_types/qt6chemisketch_debug_metatypes.json"
 	/opt/homebrew/bin/cmake -E true
 
 CMakeFiles/ChemiSketch.dir/codegen:
@@ -883,8 +883,8 @@ CMakeFiles/ChemiSketch.dir/depend: ChemiSketch_autogen/3YJK5W5UP7/qrc_assets.cpp
 CMakeFiles/ChemiSketch.dir/depend: ChemiSketch_autogen/timestamp
 CMakeFiles/ChemiSketch.dir/depend: chemisketch_qmltyperegistrations.cpp
 CMakeFiles/ChemiSketch.dir/depend: meta_types/ChemiSketch_json_file_list.txt
-CMakeFiles/ChemiSketch.dir/depend: meta_types/qt6chemisketch_metatypes.json
-CMakeFiles/ChemiSketch.dir/depend: meta_types/qt6chemisketch_metatypes.json.gen
+CMakeFiles/ChemiSketch.dir/depend: meta_types/qt6chemisketch_debug_metatypes.json
+CMakeFiles/ChemiSketch.dir/depend: meta_types/qt6chemisketch_debug_metatypes.json.gen
 	cd /Users/jacob/Documents/ChemiSketch-master/chemisketch/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/jacob/Documents/ChemiSketch-master/chemisketch /Users/jacob/Documents/ChemiSketch-master/chemisketch /Users/jacob/Documents/ChemiSketch-master/chemisketch/build /Users/jacob/Documents/ChemiSketch-master/chemisketch/build /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles/ChemiSketch.dir/DependInfo.cmake "--color=$(COLOR)" ChemiSketch
 .PHONY : CMakeFiles/ChemiSketch.dir/depend
 

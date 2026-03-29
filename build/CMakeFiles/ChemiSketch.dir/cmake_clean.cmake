@@ -102,8 +102,8 @@ file(REMOVE_RECURSE
   "chemisketch_qmltyperegistrations.cpp"
   "meta_types/ChemiSketch_json_file_list.txt"
   "meta_types/ChemiSketch_json_file_list.txt.timestamp"
-  "meta_types/qt6chemisketch_metatypes.json"
-  "meta_types/qt6chemisketch_metatypes.json.gen"
+  "meta_types/qt6chemisketch_debug_metatypes.json"
+  "meta_types/qt6chemisketch_debug_metatypes.json.gen"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -216,6 +216,8 @@ Item {
         MouseArea {
             anchors.fill: parent
             acceptedButtons: Qt.LeftButton
+            preventStealing: true
+            propagateComposedEvents: false
 
             onPressed: function(mouse) {
                 if (!root.controller) return

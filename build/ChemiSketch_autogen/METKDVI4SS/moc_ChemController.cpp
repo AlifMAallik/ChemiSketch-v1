@@ -43,6 +43,7 @@ template <> constexpr inline auto ChemController::qt_create_metaobjectdata<qt_me
         "auto",
         "activeToolChanged",
         "",
+        "activeElementChanged",
         "isDarkThemeChanged",
         "moleculeInfoChanged",
         "zoomFactorChanged",
@@ -53,6 +54,8 @@ template <> constexpr inline auto ChemController::qt_create_metaobjectdata<qt_me
         "atomId",
         "x",
         "y",
+        "setActiveElement",
+        "element",
         "canvasPressed",
         "pos",
         "canvasDragged",
@@ -63,6 +66,8 @@ template <> constexpr inline auto ChemController::qt_create_metaobjectdata<qt_me
         "addBenzeneAt",
         "center",
         "radius",
+        "addCyclohexaneAt",
+        "addCyclopentaneAt",
         "changeAtomElement",
         "newElement",
         "clearCanvas",
@@ -82,6 +87,7 @@ template <> constexpr inline auto ChemController::qt_create_metaobjectdata<qt_me
         "molecule",
         "Molecule*",
         "activeTool",
+        "activeElement",
         "isDarkTheme",
         "moleculeInfo",
         "zoomFactor"
@@ -90,96 +96,120 @@ template <> constexpr inline auto ChemController::qt_create_metaobjectdata<qt_me
     QtMocHelpers::UintData qt_methods {
         // Signal 'activeToolChanged'
         QtMocHelpers::SignalData<void()>(3, 4, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'isDarkThemeChanged'
+        // Signal 'activeElementChanged'
         QtMocHelpers::SignalData<void()>(5, 4, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'moleculeInfoChanged'
+        // Signal 'isDarkThemeChanged'
         QtMocHelpers::SignalData<void()>(6, 4, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'zoomFactorChanged'
+        // Signal 'moleculeInfoChanged'
         QtMocHelpers::SignalData<void()>(7, 4, QMC::AccessPublic, QMetaType::Void),
-        // Signal 'canvasNeedsRepaint'
+        // Signal 'zoomFactorChanged'
         QtMocHelpers::SignalData<void()>(8, 4, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'canvasNeedsRepaint'
+        QtMocHelpers::SignalData<void()>(9, 4, QMC::AccessPublic, QMetaType::Void),
         // Signal 'moleculeValidated'
-        QtMocHelpers::SignalData<void(bool)>(9, 4, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::Bool, 10 },
+        QtMocHelpers::SignalData<void(bool)>(10, 4, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::Bool, 11 },
         }}),
         // Signal 'bondRejected'
-        QtMocHelpers::SignalData<void(const QString &, double, double)>(11, 4, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 12 }, { QMetaType::Double, 13 }, { QMetaType::Double, 14 },
+        QtMocHelpers::SignalData<void(const QString &, double, double)>(12, 4, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 13 }, { QMetaType::Double, 14 }, { QMetaType::Double, 15 },
+        }}),
+        // Method 'setActiveElement'
+        QtMocHelpers::MethodData<void(const QString &)>(16, 4, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 17 },
         }}),
         // Method 'canvasPressed'
-        QtMocHelpers::MethodData<void(const QPointF &)>(15, 4, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QPointF, 16 },
+        QtMocHelpers::MethodData<void(const QPointF &)>(18, 4, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QPointF, 19 },
         }}),
         // Method 'canvasDragged'
-        QtMocHelpers::MethodData<void(const QPointF &)>(17, 4, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QPointF, 16 },
+        QtMocHelpers::MethodData<void(const QPointF &)>(20, 4, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QPointF, 19 },
         }}),
         // Method 'canvasReleased'
-        QtMocHelpers::MethodData<void(const QPointF &)>(18, 4, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QPointF, 16 },
+        QtMocHelpers::MethodData<void(const QPointF &)>(21, 4, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QPointF, 19 },
         }}),
         // Method 'canAtomAcceptBond'
-        QtMocHelpers::MethodData<bool(const QString &, double) const>(19, 4, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 12 }, { QMetaType::Double, 20 },
+        QtMocHelpers::MethodData<bool(const QString &, double) const>(22, 4, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 13 }, { QMetaType::Double, 23 },
         }}),
         // Method 'remainingValence'
-        QtMocHelpers::MethodData<double(const QString &) const>(21, 4, QMC::AccessPublic, QMetaType::Double, {{
-            { QMetaType::QString, 12 },
+        QtMocHelpers::MethodData<double(const QString &) const>(24, 4, QMC::AccessPublic, QMetaType::Double, {{
+            { QMetaType::QString, 13 },
         }}),
         // Method 'addBenzeneAt'
-        QtMocHelpers::MethodData<void(const QPointF &, double)>(22, 4, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QPointF, 23 }, { QMetaType::Double, 24 },
+        QtMocHelpers::MethodData<void(const QPointF &, double)>(25, 4, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QPointF, 26 }, { QMetaType::Double, 27 },
         }}),
         // Method 'addBenzeneAt'
-        QtMocHelpers::MethodData<void(const QPointF &)>(22, 4, QMC::AccessPublic | QMC::MethodCloned, QMetaType::Void, {{
-            { QMetaType::QPointF, 23 },
+        QtMocHelpers::MethodData<void(const QPointF &)>(25, 4, QMC::AccessPublic | QMC::MethodCloned, QMetaType::Void, {{
+            { QMetaType::QPointF, 26 },
+        }}),
+        // Method 'addCyclohexaneAt'
+        QtMocHelpers::MethodData<void(const QPointF &, double)>(28, 4, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QPointF, 26 }, { QMetaType::Double, 27 },
+        }}),
+        // Method 'addCyclohexaneAt'
+        QtMocHelpers::MethodData<void(const QPointF &)>(28, 4, QMC::AccessPublic | QMC::MethodCloned, QMetaType::Void, {{
+            { QMetaType::QPointF, 26 },
+        }}),
+        // Method 'addCyclopentaneAt'
+        QtMocHelpers::MethodData<void(const QPointF &, double)>(29, 4, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QPointF, 26 }, { QMetaType::Double, 27 },
+        }}),
+        // Method 'addCyclopentaneAt'
+        QtMocHelpers::MethodData<void(const QPointF &)>(29, 4, QMC::AccessPublic | QMC::MethodCloned, QMetaType::Void, {{
+            { QMetaType::QPointF, 26 },
         }}),
         // Method 'changeAtomElement'
-        QtMocHelpers::MethodData<void(const QString &, const QString &)>(25, 4, QMC::AccessPublic, QMetaType::Void, {{
-            { QMetaType::QString, 12 }, { QMetaType::QString, 26 },
+        QtMocHelpers::MethodData<void(const QString &, const QString &)>(30, 4, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 13 }, { QMetaType::QString, 31 },
         }}),
         // Method 'clearCanvas'
-        QtMocHelpers::MethodData<void()>(27, 4, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(32, 4, QMC::AccessPublic, QMetaType::Void),
         // Method 'saveToFile'
-        QtMocHelpers::MethodData<bool(const QString &) const>(28, 4, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 29 },
+        QtMocHelpers::MethodData<bool(const QString &) const>(33, 4, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 34 },
         }}),
         // Method 'loadFromFile'
-        QtMocHelpers::MethodData<bool(const QString &)>(30, 4, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 29 },
+        QtMocHelpers::MethodData<bool(const QString &)>(35, 4, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 34 },
         }}),
         // Method 'exportMol'
-        QtMocHelpers::MethodData<bool(const QString &) const>(31, 4, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 29 },
+        QtMocHelpers::MethodData<bool(const QString &) const>(36, 4, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 34 },
         }}),
         // Method 'importMol'
-        QtMocHelpers::MethodData<bool(const QString &)>(32, 4, QMC::AccessPublic, QMetaType::Bool, {{
-            { QMetaType::QString, 29 },
+        QtMocHelpers::MethodData<bool(const QString &)>(37, 4, QMC::AccessPublic, QMetaType::Bool, {{
+            { QMetaType::QString, 34 },
         }}),
         // Method 'zoomIn'
-        QtMocHelpers::MethodData<void()>(33, 4, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(38, 4, QMC::AccessPublic, QMetaType::Void),
         // Method 'zoomOut'
-        QtMocHelpers::MethodData<void()>(34, 4, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(39, 4, QMC::AccessPublic, QMetaType::Void),
         // Method 'resetZoom'
-        QtMocHelpers::MethodData<void()>(35, 4, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::MethodData<void()>(40, 4, QMC::AccessPublic, QMetaType::Void),
         // Method 'getAtomRenderData'
-        QtMocHelpers::MethodData<QVariantList() const>(36, 4, QMC::AccessPublic, 0x80000000 | 37),
+        QtMocHelpers::MethodData<QVariantList() const>(41, 4, QMC::AccessPublic, 0x80000000 | 42),
         // Method 'getBondRenderData'
-        QtMocHelpers::MethodData<QVariantList() const>(38, 4, QMC::AccessPublic, 0x80000000 | 37),
+        QtMocHelpers::MethodData<QVariantList() const>(43, 4, QMC::AccessPublic, 0x80000000 | 42),
         // Method 'getTempLine'
-        QtMocHelpers::MethodData<QVariantMap() const>(39, 4, QMC::AccessPublic, 0x80000000 | 40),
+        QtMocHelpers::MethodData<QVariantMap() const>(44, 4, QMC::AccessPublic, 0x80000000 | 45),
     };
     QtMocHelpers::UintData qt_properties {
         // property 'molecule'
-        QtMocHelpers::PropertyData<Molecule*>(41, 0x80000000 | 42, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
+        QtMocHelpers::PropertyData<Molecule*>(46, 0x80000000 | 47, QMC::DefaultPropertyFlags | QMC::EnumOrFlag | QMC::Constant),
         // property 'activeTool'
-        QtMocHelpers::PropertyData<QString>(43, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 0),
+        QtMocHelpers::PropertyData<QString>(48, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 0),
+        // property 'activeElement'
+        QtMocHelpers::PropertyData<QString>(49, QMetaType::QString, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 1),
         // property 'isDarkTheme'
-        QtMocHelpers::PropertyData<bool>(44, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 1),
+        QtMocHelpers::PropertyData<bool>(50, QMetaType::Bool, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 2),
         // property 'moleculeInfo'
-        QtMocHelpers::PropertyData<QVariantMap>(45, 0x80000000 | 40, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 2),
+        QtMocHelpers::PropertyData<QVariantMap>(51, 0x80000000 | 45, QMC::DefaultPropertyFlags | QMC::EnumOrFlag, 3),
         // property 'zoomFactor'
-        QtMocHelpers::PropertyData<double>(46, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 3),
+        QtMocHelpers::PropertyData<double>(52, QMetaType::Double, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet, 4),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -206,39 +236,45 @@ void ChemController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->activeToolChanged(); break;
-        case 1: _t->isDarkThemeChanged(); break;
-        case 2: _t->moleculeInfoChanged(); break;
-        case 3: _t->zoomFactorChanged(); break;
-        case 4: _t->canvasNeedsRepaint(); break;
-        case 5: _t->moleculeValidated((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
-        case 6: _t->bondRejected((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3]))); break;
-        case 7: _t->canvasPressed((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1]))); break;
-        case 8: _t->canvasDragged((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1]))); break;
-        case 9: _t->canvasReleased((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1]))); break;
-        case 10: { bool _r = _t->canAtomAcceptBond((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])));
+        case 1: _t->activeElementChanged(); break;
+        case 2: _t->isDarkThemeChanged(); break;
+        case 3: _t->moleculeInfoChanged(); break;
+        case 4: _t->zoomFactorChanged(); break;
+        case 5: _t->canvasNeedsRepaint(); break;
+        case 6: _t->moleculeValidated((*reinterpret_cast< std::add_pointer_t<bool>>(_a[1]))); break;
+        case 7: _t->bondRejected((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[3]))); break;
+        case 8: _t->setActiveElement((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 9: _t->canvasPressed((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1]))); break;
+        case 10: _t->canvasDragged((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1]))); break;
+        case 11: _t->canvasReleased((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1]))); break;
+        case 12: { bool _r = _t->canAtomAcceptBond((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 11: { double _r = _t->remainingValence((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 13: { double _r = _t->remainingValence((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< double*>(_a[0]) = std::move(_r); }  break;
-        case 12: _t->addBenzeneAt((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2]))); break;
-        case 13: _t->addBenzeneAt((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1]))); break;
-        case 14: _t->changeAtomElement((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
-        case 15: _t->clearCanvas(); break;
-        case 16: { bool _r = _t->saveToFile((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 14: _t->addBenzeneAt((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2]))); break;
+        case 15: _t->addBenzeneAt((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1]))); break;
+        case 16: _t->addCyclohexaneAt((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2]))); break;
+        case 17: _t->addCyclohexaneAt((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1]))); break;
+        case 18: _t->addCyclopentaneAt((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<double>>(_a[2]))); break;
+        case 19: _t->addCyclopentaneAt((*reinterpret_cast< std::add_pointer_t<QPointF>>(_a[1]))); break;
+        case 20: _t->changeAtomElement((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2]))); break;
+        case 21: _t->clearCanvas(); break;
+        case 22: { bool _r = _t->saveToFile((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 17: { bool _r = _t->loadFromFile((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 23: { bool _r = _t->loadFromFile((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 18: { bool _r = _t->exportMol((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 24: { bool _r = _t->exportMol((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 19: { bool _r = _t->importMol((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
+        case 25: { bool _r = _t->importMol((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = std::move(_r); }  break;
-        case 20: _t->zoomIn(); break;
-        case 21: _t->zoomOut(); break;
-        case 22: _t->resetZoom(); break;
-        case 23: { QVariantList _r = _t->getAtomRenderData();
+        case 26: _t->zoomIn(); break;
+        case 27: _t->zoomOut(); break;
+        case 28: _t->resetZoom(); break;
+        case 29: { QVariantList _r = _t->getAtomRenderData();
             if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 24: { QVariantList _r = _t->getBondRenderData();
+        case 30: { QVariantList _r = _t->getBondRenderData();
             if (_a[0]) *reinterpret_cast< QVariantList*>(_a[0]) = std::move(_r); }  break;
-        case 25: { QVariantMap _r = _t->getTempLine();
+        case 31: { QVariantMap _r = _t->getTempLine();
             if (_a[0]) *reinterpret_cast< QVariantMap*>(_a[0]) = std::move(_r); }  break;
         default: ;
         }
@@ -246,17 +282,19 @@ void ChemController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (ChemController::*)()>(_a, &ChemController::activeToolChanged, 0))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ChemController::*)()>(_a, &ChemController::isDarkThemeChanged, 1))
+        if (QtMocHelpers::indexOfMethod<void (ChemController::*)()>(_a, &ChemController::activeElementChanged, 1))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ChemController::*)()>(_a, &ChemController::moleculeInfoChanged, 2))
+        if (QtMocHelpers::indexOfMethod<void (ChemController::*)()>(_a, &ChemController::isDarkThemeChanged, 2))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ChemController::*)()>(_a, &ChemController::zoomFactorChanged, 3))
+        if (QtMocHelpers::indexOfMethod<void (ChemController::*)()>(_a, &ChemController::moleculeInfoChanged, 3))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ChemController::*)()>(_a, &ChemController::canvasNeedsRepaint, 4))
+        if (QtMocHelpers::indexOfMethod<void (ChemController::*)()>(_a, &ChemController::zoomFactorChanged, 4))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ChemController::*)(bool )>(_a, &ChemController::moleculeValidated, 5))
+        if (QtMocHelpers::indexOfMethod<void (ChemController::*)()>(_a, &ChemController::canvasNeedsRepaint, 5))
             return;
-        if (QtMocHelpers::indexOfMethod<void (ChemController::*)(const QString & , double , double )>(_a, &ChemController::bondRejected, 6))
+        if (QtMocHelpers::indexOfMethod<void (ChemController::*)(bool )>(_a, &ChemController::moleculeValidated, 6))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (ChemController::*)(const QString & , double , double )>(_a, &ChemController::bondRejected, 7))
             return;
     }
     if (_c == QMetaObject::RegisterPropertyMetaType) {
@@ -271,9 +309,10 @@ void ChemController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         switch (_id) {
         case 0: *reinterpret_cast<Molecule**>(_v) = _t->molecule(); break;
         case 1: *reinterpret_cast<QString*>(_v) = _t->activeTool(); break;
-        case 2: *reinterpret_cast<bool*>(_v) = _t->isDarkTheme(); break;
-        case 3: *reinterpret_cast<QVariantMap*>(_v) = _t->moleculeInfo(); break;
-        case 4: *reinterpret_cast<double*>(_v) = _t->zoomFactor(); break;
+        case 2: *reinterpret_cast<QString*>(_v) = _t->activeElement(); break;
+        case 3: *reinterpret_cast<bool*>(_v) = _t->isDarkTheme(); break;
+        case 4: *reinterpret_cast<QVariantMap*>(_v) = _t->moleculeInfo(); break;
+        case 5: *reinterpret_cast<double*>(_v) = _t->zoomFactor(); break;
         default: break;
         }
     }
@@ -281,8 +320,9 @@ void ChemController::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         void *_v = _a[0];
         switch (_id) {
         case 1: _t->setActiveTool(*reinterpret_cast<QString*>(_v)); break;
-        case 2: _t->setIsDarkTheme(*reinterpret_cast<bool*>(_v)); break;
-        case 4: _t->setZoomFactor(*reinterpret_cast<double*>(_v)); break;
+        case 2: _t->setActiveElement(*reinterpret_cast<QString*>(_v)); break;
+        case 3: _t->setIsDarkTheme(*reinterpret_cast<bool*>(_v)); break;
+        case 5: _t->setZoomFactor(*reinterpret_cast<double*>(_v)); break;
         default: break;
         }
     }
@@ -307,20 +347,20 @@ int ChemController::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 26)
+        if (_id < 32)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 26;
+        _id -= 32;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 26)
+        if (_id < 32)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 26;
+        _id -= 32;
     }
     if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }
@@ -332,38 +372,44 @@ void ChemController::activeToolChanged()
 }
 
 // SIGNAL 1
-void ChemController::isDarkThemeChanged()
+void ChemController::activeElementChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 
 // SIGNAL 2
-void ChemController::moleculeInfoChanged()
+void ChemController::isDarkThemeChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 
 // SIGNAL 3
-void ChemController::zoomFactorChanged()
+void ChemController::moleculeInfoChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 3, nullptr);
 }
 
 // SIGNAL 4
-void ChemController::canvasNeedsRepaint()
+void ChemController::zoomFactorChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 4, nullptr);
 }
 
 // SIGNAL 5
-void ChemController::moleculeValidated(bool _t1)
+void ChemController::canvasNeedsRepaint()
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 5, nullptr, _t1);
+    QMetaObject::activate(this, &staticMetaObject, 5, nullptr);
 }
 
 // SIGNAL 6
+void ChemController::moleculeValidated(bool _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 6, nullptr, _t1);
+}
+
+// SIGNAL 7
 void ChemController::bondRejected(const QString & _t1, double _t2, double _t3)
 {
-    QMetaObject::activate<void>(this, &staticMetaObject, 6, nullptr, _t1, _t2, _t3);
+    QMetaObject::activate<void>(this, &staticMetaObject, 7, nullptr, _t1, _t2, _t3);
 }
 QT_WARNING_POP

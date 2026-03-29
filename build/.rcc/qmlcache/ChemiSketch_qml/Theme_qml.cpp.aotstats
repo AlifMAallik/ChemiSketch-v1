@@ -6,7 +6,7 @@
                     {
                         "codegenSuccessful": true,
                         "column": 42,
-                        "durationMicroseconds": 141,
+                        "durationMicroseconds": 298,
                         "errorMessage": "",
                         "functionName": "fontFamily",
                         "line": 49

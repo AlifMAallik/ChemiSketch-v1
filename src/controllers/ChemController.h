@@ -16,6 +16,7 @@ class ChemController : public QObject {
 
     Q_PROPERTY(Molecule *molecule READ molecule CONSTANT)
     Q_PROPERTY(QString activeTool READ activeTool WRITE setActiveTool NOTIFY activeToolChanged)
+    Q_PROPERTY(QString activeElement READ activeElement WRITE setActiveElement NOTIFY activeElementChanged)
     Q_PROPERTY(bool isDarkTheme READ isDarkTheme WRITE setIsDarkTheme NOTIFY isDarkThemeChanged)
     Q_PROPERTY(QVariantMap moleculeInfo READ moleculeInfo NOTIFY moleculeInfoChanged)
     Q_PROPERTY(double zoomFactor READ zoomFactor WRITE setZoomFactor NOTIFY zoomFactorChanged)
@@ -28,6 +29,9 @@ public:
 
     QString activeTool() const;
     void setActiveTool(const QString &tool);
+
+    QString activeElement() const;
+    Q_INVOKABLE void setActiveElement(const QString &element);
 
     bool isDarkTheme() const;
     void setIsDarkTheme(bool dark);
@@ -54,6 +58,8 @@ public:
     // --- Tool actions ---
 
     Q_INVOKABLE void addBenzeneAt(const QPointF &center, double radius = 50.0);
+    Q_INVOKABLE void addCyclohexaneAt(const QPointF &center, double radius = 50.0);
+    Q_INVOKABLE void addCyclopentaneAt(const QPointF &center, double radius = 45.0);
     Q_INVOKABLE void changeAtomElement(const QString &atomId, const QString &newElement);
     Q_INVOKABLE void clearCanvas();
 
@@ -76,6 +82,7 @@ public:
 
 signals:
     void activeToolChanged();
+    void activeElementChanged();
     void isDarkThemeChanged();
     void moleculeInfoChanged();
     void zoomFactorChanged();
@@ -98,6 +105,7 @@ private:
 
     Molecule *m_molecule = nullptr;
     QString m_activeTool = "single_bond";
+    QString m_activeElement = "C";
     bool m_isDarkTheme = true;
     double m_zoomFactor = 1.0;
 
