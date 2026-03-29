@@ -1,0 +1,10 @@
+-I
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build
+-I
+/opt/homebrew/share/qt/qml
+--resource
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/.qt/rcc/qmake_ChemiSketch.qrc
+--resource
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/.qt/rcc/ChemiSketch_raw_qml_0.qrc
+--module
+ChemiSketch

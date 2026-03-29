@@ -1,0 +1,268 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 12,
+                        "durationMicroseconds": 0,
+                        "errorMessage": "Could not find property \"color\".",
+                        "functionName": "color",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "",
+                        "functionName": "safeInfo",
+                        "line": 29
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 392,
+                        "errorMessage": "",
+                        "functionName": "onActiveToolChanged",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "",
+                        "functionName": "controller",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 32
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 9,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "onMoleculeInfoChanged",
+                        "line": 33
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 42
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "",
+                        "functionName": "activeTool",
+                        "line": 56
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "",
+                        "functionName": "activeNavIndex",
+                        "line": 57
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 50,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onToolSelected",
+                        "line": 58
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "",
+                        "functionName": "onToolSelected",
+                        "line": 58
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onElementSelected",
+                        "line": 62
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "",
+                        "functionName": "onElementSelected",
+                        "line": 62
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 42,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onActiveNavIndexChanged",
+                        "line": 65
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "",
+                        "functionName": "controller",
+                        "line": 80
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 81
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "opacity",
+                        "line": 82
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 79
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 71,
+                        "durationMicroseconds": 328,
+                        "errorMessage": "",
+                        "functionName": "duration",
+                        "line": 83
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 7,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "moleculeInfo",
+                        "line": 89
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 90
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "",
+                        "functionName": "opacity",
+                        "line": 91
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 88
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 71,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "duration",
+                        "line": 92
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "currentIndex",
+                        "line": 100
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onTabClicked",
+                        "line": 101
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "",
+                        "functionName": "onTabClicked",
+                        "line": 101
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 37,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "",
+                        "functionName": "bottom",
+                        "line": 97
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 98
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "bottomMargin",
+                        "line": 99
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot retrieve a non-object type by ID: root",
+                        "functionName": "moleculeInfo",
+                        "line": 111
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "",
+                        "functionName": "visible",
+                        "line": 112
+                    }
+                ],
+                "filePath": "/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/Main.qml"
+            }
+        ],
+        "moduleId": "ChemiSketch(ChemiSketch)"
+    }
+]

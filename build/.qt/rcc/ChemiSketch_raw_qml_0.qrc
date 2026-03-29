@@ -1,0 +1,20 @@
+<RCC>
+  <qresource prefix="/qt/qml/ChemiSketch/">
+    <file alias="qml/Main.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/Main.qml</file>
+    <file alias="qml/Theme.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/Theme.qml</file>
+    <file alias="qml/TopMenuBar.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/TopMenuBar.qml</file>
+    <file alias="qml/LeftSidebar.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/LeftSidebar.qml</file>
+    <file alias="qml/BottomTabBar.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/BottomTabBar.qml</file>
+    <file alias="qml/RightPanel.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/RightPanel.qml</file>
+    <file alias="qml/CollapsibleSection.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/CollapsibleSection.qml</file>
+    <file alias="qml/AppState.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/AppState.qml</file>
+    <file alias="qml/BondValidator.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/BondValidator.qml</file>
+    <file alias="qml/SketchView.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/SketchView.qml</file>
+    <file alias="qml/PropertiesView.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/PropertiesView.qml</file>
+    <file alias="qml/screens/DrawScreen.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/screens/DrawScreen.qml</file>
+    <file alias="qml/screens/CameraScreen.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/screens/CameraScreen.qml</file>
+    <file alias="qml/components/Placeholder.qml">/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/components/Placeholder.qml</file>
+    <file alias="resources/assets.qrc">/Users/jacob/Documents/ChemiSketch-master/chemisketch/resources/assets.qrc</file>
+  </qresource>
+</RCC>
+

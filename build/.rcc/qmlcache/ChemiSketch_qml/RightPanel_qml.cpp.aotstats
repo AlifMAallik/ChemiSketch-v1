@@ -1,0 +1,1492 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 12,
+                        "durationMicroseconds": 378,
+                        "errorMessage": "Cannot load property bgSurface from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 8
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "moleculeInfo",
+                        "line": 10
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 42,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "Cannot load property atomCount from (component in /Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/RightPanel.qml)::moleculeInfo with type QVariant.",
+                        "functionName": "safeAtomCount",
+                        "line": 13
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 42,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property bondCount from (component in /Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/RightPanel.qml)::moleculeInfo with type QVariant.",
+                        "functionName": "safeBondCount",
+                        "line": 14
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property formula from (component in /Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/RightPanel.qml)::moleculeInfo with type QVariant.",
+                        "functionName": "safeFormula",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 42,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot load property molecularWeight from (component in /Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/RightPanel.qml)::moleculeInfo with type QVariant.",
+                        "functionName": "safeWeight",
+                        "line": 16
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 8,
+                        "errorMessage": "Cannot load property classification from (component in /Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/RightPanel.qml)::moleculeInfo with type QVariant.",
+                        "functionName": "safeClassification",
+                        "line": 17
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 41,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "Cannot load property isValid from (component in /Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/RightPanel.qml)::moleculeInfo with type QVariant.",
+                        "functionName": "safeIsValid",
+                        "line": 18
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 23
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 8,
+                        "errorMessage": "Cannot load property border from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 21
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 11,
+                        "errorMessage": "Cannot load property spacingXl from const QMetaObject.",
+                        "functionName": "contentHeight",
+                        "line": 30
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "boundsBehavior",
+                        "line": 32
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 28
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 36
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property spacingLg from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 37
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 22,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property spacingLg from const QMetaObject.",
+                        "functionName": "padding",
+                        "line": 38
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textPrimary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 46
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 43
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontXl from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 44
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 45
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 11,
+                        "errorMessage": "Cannot load property spacingLg from const QMetaObject.",
+                        "functionName": "width",
+                        "line": 51
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacingSm from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 52
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textMuted from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 59
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 56
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontXs from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 57
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacingSm from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 63
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 64
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 10,
+                        "errorMessage": "Cannot load property spacingSm from const QMetaObject.",
+                        "functionName": "width",
+                        "line": 67
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property radiusMd from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 69
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property bgCard from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 70
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property border from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 71
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 76
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "text",
+                        "line": 81
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property textPrimary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 85
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 59,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 80
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 82
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontXxl from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 83
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 84
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textSecondary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 92
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 59,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 88
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 90
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontXs from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 91
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 10,
+                        "errorMessage": "Cannot load property spacingSm from const QMetaObject.",
+                        "functionName": "width",
+                        "line": 98
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property radiusMd from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 100
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property bgCard from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 101
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property border from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 102
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 47,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 107
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 29,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "text",
+                        "line": 112
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property textPrimary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 116
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 59,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 111
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 113
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontXxl from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 114
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 115
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textSecondary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 123
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 59,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 119
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 121
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontXs from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 122
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property spacingLg from const QMetaObject.",
+                        "functionName": "width",
+                        "line": 132
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacingSm from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 133
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property textMuted from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 140
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 137
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontXs from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 138
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 144
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 10,
+                        "errorMessage": "Cannot load property spacingLg from const QMetaObject.",
+                        "functionName": "height",
+                        "line": 145
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property radiusMd from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 146
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 132,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: conversion to QVariant -> QColor stored as QVariant",
+                        "functionName": "color",
+                        "line": 147
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 35,
+                        "durationMicroseconds": 105,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: conversion to QVariant -> QColor stored as QVariant",
+                        "functionName": "color",
+                        "line": 148
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property spacingSm from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 158
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 154
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 40,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 155
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 156
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 42,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property spacingLg from const QMetaObject.",
+                        "functionName": "margins",
+                        "line": 157
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacingSm from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 161
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 164
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "Cannot load property accentGreen from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 166
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 169
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "Cannot load property accentGreen from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 173
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 170
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontSm from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 171
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 172
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 178
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 36,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property textSecondary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 183
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "wrapMode",
+                        "line": 184
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 36,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 185
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 42,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 181
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 45,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontSm from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 182
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property spacingLg from const QMetaObject.",
+                        "functionName": "width",
+                        "line": 193
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property spacingSm from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 194
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textMuted from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 201
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 198
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontXs from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 199
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 205
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 30,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacingXs from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 206
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 209
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property radiusSm from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 211
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property bgCard from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 212
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 215
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacingMd from const QMetaObject.",
+                        "functionName": "leftMargin",
+                        "line": 216
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacingMd from const QMetaObject.",
+                        "functionName": "rightMargin",
+                        "line": 217
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textSecondary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 223
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 221
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontSm from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 222
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 57,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 224
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 228
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property textPrimary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 232
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 229
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontSm from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 230
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 231
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 57,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 233
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 239
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property radiusSm from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 241
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property bgCard from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 242
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 11,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 245
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacingMd from const QMetaObject.",
+                        "functionName": "leftMargin",
+                        "line": 246
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property spacingMd from const QMetaObject.",
+                        "functionName": "rightMargin",
+                        "line": 247
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textSecondary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 253
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 251
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontSm from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 252
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 57,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 254
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 258
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textPrimary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 262
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 259
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontSm from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 260
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 261
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 57,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 263
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 269
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property radiusSm from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 271
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property bgCard from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 272
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 11,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 275
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property spacingMd from const QMetaObject.",
+                        "functionName": "leftMargin",
+                        "line": 276
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacingMd from const QMetaObject.",
+                        "functionName": "rightMargin",
+                        "line": 277
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textSecondary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 283
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 281
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontSm from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 282
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 57,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 284
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "text",
+                        "line": 288
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textPrimary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 292
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 289
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 49,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontSm from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 290
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 46,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 291
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 57,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 293
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 8,
+                        "errorMessage": "Cannot load property spacingLg from const QMetaObject.",
+                        "functionName": "width",
+                        "line": 302
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 26,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property spacingSm from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 303
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textMuted from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 310
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 307
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontXs from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 308
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 68,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "model",
+                        "line": 314
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 320
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property radiusSm from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 322
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot load property bgCard from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 323
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 39,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "Cannot load property border from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 324
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "Cannot load property spacingMd from const QMetaObject.",
+                        "functionName": "spacing",
+                        "line": 331
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 329
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 46,
+                        "durationMicroseconds": 9,
+                        "errorMessage": "Cannot load property spacingMd from const QMetaObject.",
+                        "functionName": "margins",
+                        "line": 330
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 41,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property radiusSm from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 335
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 40,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property bgBase from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 336
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 57,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 337
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property textMuted from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 343
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 55,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 340
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 57,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "verticalCenter",
+                        "line": 348
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 134,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 352
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property textPrimary from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 356
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 353
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 53,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property fontSm from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 354
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 50,
+                        "durationMicroseconds": 21,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 355
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 43,
+                        "durationMicroseconds": 104,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 359
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 44,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property textMuted from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 362
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 50,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 360
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 10,
+                        "errorMessage": "Cannot load property spacingLg from const QMetaObject.",
+                        "functionName": "width",
+                        "line": 372
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 25,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property radiusMd from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 374
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 3,
+                        "errorMessage": "Cannot load property accentBlue from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 375
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 29,
+                        "durationMicroseconds": 8,
+                        "errorMessage": "Cannot load property radiusMd from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 381
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 13,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 379
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 33,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "Cannot load property radius from (component in /Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/RightPanel.qml)::parent with type QQuickItem.",
+                        "functionName": "radius",
+                        "line": 387
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property accentBlue from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 388
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 11,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 386
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 15,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 394
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 34,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 396
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 37,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property fontMd from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 397
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 17,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 398
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "cursorShape",
+                        "line": 404
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 45,
+                        "durationMicroseconds": 57,
+                        "errorMessage": "",
+                        "functionName": "onContainsMouseChanged",
+                        "line": 407
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 16,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 403
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 67,
+                        "durationMicroseconds": 7,
+                        "errorMessage": "Cannot load property animFast from const QMetaObject.",
+                        "functionName": "duration",
+                        "line": 412
+                    }
+                ],
+                "filePath": "/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/RightPanel.qml"
+            }
+        ],
+        "moduleId": "ChemiSketch(ChemiSketch)"
+    }
+]

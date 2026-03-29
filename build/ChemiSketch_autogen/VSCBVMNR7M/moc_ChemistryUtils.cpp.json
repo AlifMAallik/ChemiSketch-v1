@@ -1,0 +1,108 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                },
+                {
+                    "name": "QML.Singleton",
+                    "value": "true"
+                }
+            ],
+            "className": "ChemistryUtils",
+            "lineNumber": 10,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "molecule",
+                            "type": "Molecule*"
+                        }
+                    ],
+                    "index": 0,
+                    "isConst": true,
+                    "name": "validateMolecule",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "molecule",
+                            "type": "Molecule*"
+                        }
+                    ],
+                    "index": 1,
+                    "isConst": true,
+                    "name": "classifyMolecule",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "molecule",
+                            "type": "Molecule*"
+                        }
+                    ],
+                    "index": 2,
+                    "isConst": true,
+                    "name": "molecularFormula",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "molecule",
+                            "type": "Molecule*"
+                        }
+                    ],
+                    "index": 3,
+                    "isConst": true,
+                    "name": "electronCount",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "molecule",
+                            "type": "Molecule*"
+                        }
+                    ],
+                    "index": 4,
+                    "isConst": true,
+                    "name": "molecularWeight",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "molecule",
+                            "type": "Molecule*"
+                        }
+                    ],
+                    "index": 5,
+                    "isConst": true,
+                    "name": "moleculeInfo",
+                    "returnType": "QVariantMap"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "ChemistryUtils",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "ChemistryUtils.h",
+    "outputRevision": 69
+}

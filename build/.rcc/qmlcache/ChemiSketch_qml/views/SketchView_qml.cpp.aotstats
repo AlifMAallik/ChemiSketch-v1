@@ -1,0 +1,908 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 2309,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 13
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 49,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 12
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 1560,
+                        "errorMessage": "Cannot generate efficient code for call to untyped JavaScript function",
+                        "functionName": "onPaint",
+                        "line": 21
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "onWidthChanged",
+                        "line": 35
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 29,
+                        "errorMessage": "",
+                        "functionName": "onHeightChanged",
+                        "line": 36
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 29,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 19
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "atomData",
+                        "line": 44
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 29,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "bondData",
+                        "line": 45
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "",
+                        "functionName": "tempLine",
+                        "line": 46
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 9,
+                        "durationMicroseconds": 185,
+                        "errorMessage": "",
+                        "functionName": "refresh",
+                        "line": 48
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 18,
+                        "durationMicroseconds": 11931,
+                        "errorMessage": "Cannot load property length from (component in /Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/views/SketchView.qml)::bondData with type QVariant.",
+                        "functionName": "onPaint",
+                        "line": 62
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 42
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 55
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "target",
+                        "line": 58
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 13,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "",
+                        "functionName": "onCanvasNeedsRepaint",
+                        "line": 59
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 72,
+                        "errorMessage": "",
+                        "functionName": "acceptedButtons",
+                        "line": 179
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 278,
+                        "errorMessage": "",
+                        "functionName": "onPressed",
+                        "line": 181
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 28,
+                        "errorMessage": "",
+                        "functionName": "onPressed",
+                        "line": 181
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 232,
+                        "errorMessage": "",
+                        "functionName": "onPositionChanged",
+                        "line": 185
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "",
+                        "functionName": "onPositionChanged",
+                        "line": 185
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 225,
+                        "errorMessage": "",
+                        "functionName": "onReleased",
+                        "line": 189
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 19,
+                        "errorMessage": "",
+                        "functionName": "onReleased",
+                        "line": 189
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 230,
+                        "errorMessage": "",
+                        "functionName": "onWheel",
+                        "line": 193
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "",
+                        "functionName": "onWheel",
+                        "line": 193
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 29,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 178
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 117,
+                        "errorMessage": "",
+                        "functionName": "height",
+                        "line": 208
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 209
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 109,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: call to method rgba, returning QVariant -> QColor stored as QVariant",
+                        "functionName": "color",
+                        "line": 210
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 46,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 203
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 204
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "topMargin",
+                        "line": 205
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "rightMargin",
+                        "line": 206
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 211
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 216
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 59,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "duration",
+                        "line": 217
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "spacing",
+                        "line": 225
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 221
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "right",
+                        "line": 222
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 223
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "margins",
+                        "line": 224
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 43,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 232
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "family",
+                        "line": 229
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 236
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 26,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "spacing",
+                        "line": 237
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 241
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 246
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "family",
+                        "line": 244
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 245
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 24,
+                        "errorMessage": "Cannot use shadowable base type for further lookups: ChemController::moleculeInfo with type QVariantMap",
+                        "functionName": "text",
+                        "line": 250
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 254
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "family",
+                        "line": 251
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 252
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 253
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 260
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 45,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 265
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "family",
+                        "line": 263
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 264
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 142,
+                        "errorMessage": "Cannot use shadowable base type for further lookups: ChemController::moleculeInfo with type QVariantMap",
+                        "functionName": "text",
+                        "line": 269
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 275
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "family",
+                        "line": 272
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 273
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 274
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 281
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 286
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "family",
+                        "line": 284
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 29,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 285
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 294
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "",
+                        "functionName": "family",
+                        "line": 291
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 41,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 292
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 293
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 102,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 308
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 17,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 310
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 16,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 311
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 22,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "top",
+                        "line": 304
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 305
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 28,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "topMargin",
+                        "line": 306
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 307
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 312
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 32,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "onCompleted",
+                        "line": 317
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 59,
+                        "durationMicroseconds": 32,
+                        "errorMessage": "",
+                        "functionName": "duration",
+                        "line": 318
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 322
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 343,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "model",
+                        "line": 326
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 45,
+                        "durationMicroseconds": 20,
+                        "errorMessage": "Cannot access value for name index",
+                        "functionName": "isActive",
+                        "line": 335
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 337
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 28,
+                        "durationMicroseconds": 266,
+                        "errorMessage": "Cannot generate efficient code for internal conversion with incompatible or ambiguous types: conversion to QVariant -> QColor stored as QVariant",
+                        "functionName": "color",
+                        "line": 338
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 68,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "duration",
+                        "line": 341
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 251,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 345
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "Cannot access value for name isActive",
+                        "functionName": "color",
+                        "line": 347
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 43,
+                        "durationMicroseconds": 27,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 344
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 37,
+                        "errorMessage": "",
+                        "functionName": "cursorShape",
+                        "line": 354
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 26,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 352
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 18,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "spacing",
+                        "line": 367
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 25,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "bottom",
+                        "line": 363
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 42,
+                        "errorMessage": "",
+                        "functionName": "left",
+                        "line": 364
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 31,
+                        "durationMicroseconds": 63,
+                        "errorMessage": "",
+                        "functionName": "bottomMargin",
+                        "line": 365
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 29,
+                        "durationMicroseconds": 34,
+                        "errorMessage": "",
+                        "functionName": "leftMargin",
+                        "line": 366
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 69,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 370
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 51,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 372
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 39,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 373
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 44,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 374
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 41,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 384
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 30,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 380
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 36,
+                        "errorMessage": "",
+                        "functionName": "family",
+                        "line": 382
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 383
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 87,
+                        "errorMessage": "",
+                        "functionName": "width",
+                        "line": 389
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 21,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "radius",
+                        "line": 391
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 20,
+                        "durationMicroseconds": 40,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 392
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 27,
+                        "durationMicroseconds": 35,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 393
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 24,
+                        "durationMicroseconds": 38,
+                        "errorMessage": "",
+                        "functionName": "color",
+                        "line": 403
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 399
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 30,
+                        "durationMicroseconds": 33,
+                        "errorMessage": "",
+                        "functionName": "family",
+                        "line": 401
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 33,
+                        "durationMicroseconds": 31,
+                        "errorMessage": "",
+                        "functionName": "pixelSize",
+                        "line": 402
+                    }
+                ],
+                "filePath": "/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/views/SketchView.qml"
+            }
+        ],
+        "moduleId": "ChemiSketch(ChemiSketch)"
+    }
+]

@@ -1,0 +1,22 @@
+{
+	"BUILD_DIR" : "/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/jacob/Documents/ChemiSketch-master/chemisketch/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/jacob/Documents/ChemiSketch-master/chemisketch/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/jacob/Documents/ChemiSketch-master/chemisketch",
+	"CMAKE_SOURCE_DIR" : "/Users/jacob/Documents/ChemiSketch-master/chemisketch",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/include",
+	"INPUTS" : [],
+	"LOCK_FILE" : "/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles/ChemiSketch_autogen.dir/AutoRcc_assets_3YJK5W5UP7_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "assets" ],
+	"OUTPUT_CHECKSUM" : "3YJK5W5UP7",
+	"OUTPUT_NAME" : "qrc_assets.cpp",
+	"RCC_EXECUTABLE" : "/opt/homebrew/share/qt/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/CMakeFiles/ChemiSketch_autogen.dir/AutoRcc_assets_3YJK5W5UP7_Used.txt",
+	"SOURCE" : "/Users/jacob/Documents/ChemiSketch-master/chemisketch/resources/assets.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

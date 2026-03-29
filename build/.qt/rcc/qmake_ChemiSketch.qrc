@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/ChemiSketch">
+    <file alias="qmldir">/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch/qmldir</file>
+  </qresource>
+</RCC>
+

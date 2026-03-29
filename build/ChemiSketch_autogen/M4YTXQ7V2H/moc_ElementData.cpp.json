@@ -1,0 +1,141 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                },
+                {
+                    "name": "QML.Singleton",
+                    "value": "true"
+                }
+            ],
+            "className": "ElementData",
+            "lineNumber": 22,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "symbol",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "isConst": true,
+                    "name": "maxValence",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "symbol",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "isConst": true,
+                    "name": "commonValences",
+                    "returnType": "QList<int>"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "symbol",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "isConst": true,
+                    "name": "elementName",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "symbol",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "isConst": true,
+                    "name": "atomicNumber",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "symbol",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "isConst": true,
+                    "name": "atomicWeight",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "symbol",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "isConst": true,
+                    "name": "elementColor",
+                    "returnType": "QColor"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "symbol",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "isConst": true,
+                    "name": "classify",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "symbol",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 7,
+                    "isConst": true,
+                    "name": "isValidElement",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "index": 8,
+                    "isConst": true,
+                    "name": "allSymbols",
+                    "returnType": "QStringList"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "ElementData",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "ElementData.h",
+    "outputRevision": 69
+}

@@ -1,0 +1,19 @@
+module ChemiSketch
+typeinfo ChemiSketch.qmltypes
+prefer :/qt/qml/ChemiSketch/
+Main 1.0 qml/Main.qml
+singleton Theme 1.0 qml/Theme.qml
+TopMenuBar 1.0 qml/TopMenuBar.qml
+LeftSidebar 1.0 qml/LeftSidebar.qml
+BottomTabBar 1.0 qml/BottomTabBar.qml
+RightPanel 1.0 qml/RightPanel.qml
+CollapsibleSection 1.0 qml/CollapsibleSection.qml
+singleton AppState 1.0 qml/AppState.qml
+BondValidator 1.0 qml/BondValidator.qml
+SketchView 1.0 qml/SketchView.qml
+PropertiesView 1.0 qml/PropertiesView.qml
+DrawScreen 1.0 qml/screens/DrawScreen.qml
+CameraScreen 1.0 qml/screens/CameraScreen.qml
+Placeholder 1.0 qml/components/Placeholder.qml
+depends QtQuick
+

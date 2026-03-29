@@ -1,0 +1,8 @@
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/include/../M4YTXQ7V2H/moc_Atom.cpp.json
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/include/../M4YTXQ7V2H/moc_Bond.cpp.json
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/include/../M4YTXQ7V2H/moc_ElementData.cpp.json
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/include/../M4YTXQ7V2H/moc_Molecule.cpp.json
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/include/../METKDVI4SS/moc_CameraController.cpp.json
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/include/../METKDVI4SS/moc_ChemController.cpp.json
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/include/../VSCBVMNR7M/moc_ChemistryUtils.cpp.json
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch_autogen/include/../VSCBVMNR7M/moc_FileUtils.cpp.json

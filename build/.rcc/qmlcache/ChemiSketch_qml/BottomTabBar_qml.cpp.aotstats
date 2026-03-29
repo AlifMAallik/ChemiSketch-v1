@@ -1,0 +1,212 @@
+[
+    {
+        "moduleFiles": [
+            {
+                "entries": [
+                    {
+                        "codegenSuccessful": false,
+                        "column": 13,
+                        "durationMicroseconds": 965,
+                        "errorMessage": "Cannot load property radiusPill from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 8
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 12,
+                        "durationMicroseconds": 7,
+                        "errorMessage": "Cannot load property bgCard from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 9
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 19,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property border from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 15
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 17,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property radiusPill from const QMetaObject.",
+                        "functionName": "radius",
+                        "line": 23
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 16,
+                        "durationMicroseconds": 4,
+                        "errorMessage": "Cannot load property accentBlue from const QMetaObject.",
+                        "functionName": "color",
+                        "line": 24
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 12,
+                        "durationMicroseconds": 776,
+                        "errorMessage": "",
+                        "functionName": "x",
+                        "line": 26
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 23,
+                        "durationMicroseconds": 23,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 39
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 20,
+                        "durationMicroseconds": 168,
+                        "errorMessage": "Cannot generate efficient code for storing an array in a non-sequence type",
+                        "functionName": "model",
+                        "line": 44
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 24,
+                        "durationMicroseconds": 12,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "width",
+                        "line": 53
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 25,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "height",
+                        "line": 54
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 39,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "",
+                        "functionName": "centerIn",
+                        "line": 57
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 113,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 62
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 98,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "color",
+                        "line": 64
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 25,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 61
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 72,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property animFast from const QMetaObject.",
+                        "functionName": "duration",
+                        "line": 65
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 31,
+                        "durationMicroseconds": 89,
+                        "errorMessage": "Cannot access value for name modelData",
+                        "functionName": "text",
+                        "line": 70
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 73,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "color",
+                        "line": 75
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 51,
+                        "durationMicroseconds": 22,
+                        "errorMessage": "",
+                        "functionName": "horizontalCenter",
+                        "line": 69
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 38,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property fontFamily from const QMetaObject.",
+                        "functionName": "family",
+                        "line": 71
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 41,
+                        "durationMicroseconds": 6,
+                        "errorMessage": "Cannot load property fontXs from const QMetaObject.",
+                        "functionName": "pixelSize",
+                        "line": 72
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 38,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "weight",
+                        "line": 74
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 72,
+                        "durationMicroseconds": 5,
+                        "errorMessage": "Cannot load property animFast from const QMetaObject.",
+                        "functionName": "duration",
+                        "line": 76
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 34,
+                        "durationMicroseconds": 18,
+                        "errorMessage": "",
+                        "functionName": "cursorShape",
+                        "line": 82
+                    },
+                    {
+                        "codegenSuccessful": false,
+                        "column": 32,
+                        "durationMicroseconds": 122,
+                        "errorMessage": "Cannot access value for name root",
+                        "functionName": "onClicked",
+                        "line": 83
+                    },
+                    {
+                        "codegenSuccessful": true,
+                        "column": 35,
+                        "durationMicroseconds": 14,
+                        "errorMessage": "",
+                        "functionName": "fill",
+                        "line": 81
+                    }
+                ],
+                "filePath": "/Users/jacob/Documents/ChemiSketch-master/chemisketch/qml/BottomTabBar.qml"
+            }
+        ],
+        "moduleId": "ChemiSketch(ChemiSketch)"
+    }
+]

@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_ChemiSketch_FILE /Users/jacob/Documents/ChemiSketch-master/chemisketch/build/chemisketch-app)
+set(__QT_DEPLOY_TARGET_ChemiSketch_TYPE EXECUTABLE)

@@ -1,0 +1,220 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                }
+            ],
+            "className": "Molecule",
+            "lineNumber": 11,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "point",
+                            "type": "QPointF"
+                        },
+                        {
+                            "name": "radius",
+                            "type": "double"
+                        }
+                    ],
+                    "index": 5,
+                    "isConst": true,
+                    "name": "atomAtPoint",
+                    "returnType": "Atom*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "point",
+                            "type": "QPointF"
+                        }
+                    ],
+                    "index": 6,
+                    "isCloned": true,
+                    "isConst": true,
+                    "name": "atomAtPoint",
+                    "returnType": "Atom*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "atom1Id",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "atom2Id",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 7,
+                    "isConst": true,
+                    "name": "bondBetween",
+                    "returnType": "Bond*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "atomId",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 8,
+                    "isConst": true,
+                    "name": "bondsForAtom",
+                    "returnType": "QList<Bond*>"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "atomId",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 9,
+                    "isConst": true,
+                    "name": "usedValence",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "index": 10,
+                    "name": "clear",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "atomCount",
+                    "notify": "moleculeChanged",
+                    "read": "atomCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "bondCount",
+                    "notify": "moleculeChanged",
+                    "read": "bondCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "atomList",
+                    "notify": "moleculeChanged",
+                    "read": "atomList",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "bondList",
+                    "notify": "moleculeChanged",
+                    "read": "bondList",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QVariantList",
+                    "user": false
+                }
+            ],
+            "qualifiedClassName": "Molecule",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "moleculeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "atom",
+                            "type": "Atom*"
+                        }
+                    ],
+                    "index": 1,
+                    "name": "atomAdded",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "atomId",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "name": "atomRemoved",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "bond",
+                            "type": "Bond*"
+                        }
+                    ],
+                    "index": 3,
+                    "name": "bondAdded",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "bondId",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "name": "bondRemoved",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "Molecule.h",
+    "outputRevision": 69
+}

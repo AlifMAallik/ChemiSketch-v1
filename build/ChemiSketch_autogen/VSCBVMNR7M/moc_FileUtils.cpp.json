@@ -1,0 +1,148 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                },
+                {
+                    "name": "QML.Singleton",
+                    "value": "true"
+                }
+            ],
+            "className": "FileUtils",
+            "lineNumber": 10,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "molecule",
+                            "type": "Molecule*"
+                        },
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 0,
+                    "isConst": true,
+                    "name": "saveToJson",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "parent",
+                            "type": "QObject*"
+                        }
+                    ],
+                    "index": 1,
+                    "isConst": true,
+                    "name": "loadFromJson",
+                    "returnType": "Molecule*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "isCloned": true,
+                    "isConst": true,
+                    "name": "loadFromJson",
+                    "returnType": "Molecule*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "molecule",
+                            "type": "Molecule*"
+                        },
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "isConst": true,
+                    "name": "exportToMol",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "center",
+                            "type": "QPointF"
+                        },
+                        {
+                            "name": "parent",
+                            "type": "QObject*"
+                        }
+                    ],
+                    "index": 4,
+                    "isConst": true,
+                    "name": "importFromMol",
+                    "returnType": "Molecule*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        },
+                        {
+                            "name": "center",
+                            "type": "QPointF"
+                        }
+                    ],
+                    "index": 5,
+                    "isCloned": true,
+                    "isConst": true,
+                    "name": "importFromMol",
+                    "returnType": "Molecule*"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "isCloned": true,
+                    "isConst": true,
+                    "name": "importFromMol",
+                    "returnType": "Molecule*"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "FileUtils",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "FileUtils.h",
+    "outputRevision": 69
+}

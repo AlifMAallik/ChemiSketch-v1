@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <!-- Icons, fonts, and other assets go here -->
+        <!-- Example: <file>resources/icons/app_icon.png</file> -->
+    </qresource>
+</RCC>

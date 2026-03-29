@@ -1,0 +1,14 @@
+-rootPath
+/Users/jacob/Documents/ChemiSketch-master/chemisketch
+-cmake-output
+-output-file
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/.qt/qml_imports/ChemiSketch_conf.cmake
+-importPath
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/ChemiSketch
+-importPath
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build
+-importPath
+/opt/homebrew/share/qt/qml
+-qrcFiles
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/.qt/rcc/qmake_ChemiSketch.qrc
+/Users/jacob/Documents/ChemiSketch-master/chemisketch/build/.qt/rcc/ChemiSketch_raw_qml_0.qrc

@@ -1,0 +1,161 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                }
+            ],
+            "className": "Bond",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "BondType",
+                    "values": [
+                        "Single",
+                        "Double",
+                        "Triple",
+                        "Wedge",
+                        "Hash",
+                        "Dashed",
+                        "Arrow",
+                        "Aromatic"
+                    ]
+                }
+            ],
+            "lineNumber": 9,
+            "methods": [
+                {
+                    "access": "public",
+                    "index": 2,
+                    "isConst": true,
+                    "name": "bondValence",
+                    "returnType": "double"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "atomId",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "isConst": true,
+                    "name": "connectsAtom",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "atomId",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "isConst": true,
+                    "name": "otherAtomId",
+                    "returnType": "QString"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "bondId",
+                    "read": "bondId",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "atom1Id",
+                    "read": "atom1Id",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "atom2Id",
+                    "read": "atom2Id",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "bondType",
+                    "notify": "bondTypeChanged",
+                    "read": "bondType",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "BondType",
+                    "user": false,
+                    "write": "setBondType"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "isInvalid",
+                    "notify": "isInvalidChanged",
+                    "read": "isInvalid",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "write": "setIsInvalid"
+                }
+            ],
+            "qualifiedClassName": "Bond",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "name": "bondTypeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "name": "isInvalidChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "Bond.h",
+    "outputRevision": 69
+}
