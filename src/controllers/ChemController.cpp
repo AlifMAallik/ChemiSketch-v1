@@ -201,7 +201,7 @@ void ChemController::canvasReleased(const QPointF &pos)
         return;
     }
 
-    Atom *endAtom = m_molecule->atomAtPoint(pos, ATOM_HIT_RADIUS);
+    Atom *endAtom = m_molecule->atomAtPoint(pos, BOND_END_HIT_RADIUS);
 
     // Don't bond to self
     if (endAtom && endAtom->atomId() == m_startAtomId) {
@@ -446,6 +446,7 @@ QVariantMap ChemController::getTempLine() const
         data["y1"] = m_dragStart.y();
         data["x2"] = m_dragEnd.x();
         data["y2"] = m_dragEnd.y();
+        data["startAtomId"] = m_startAtomId;
     }
     return data;
 }

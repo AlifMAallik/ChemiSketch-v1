@@ -148,6 +148,27 @@ Item {
                 var a = atomData[j]
                 var ax = a.x * zoom, ay = a.y * zoom
 
+                // Show snap target highlight when dragging
+                if (tempLine && tempLine.visible) {
+                    var tx = tempLine.x2 * zoom
+                    var ty = tempLine.y2 * zoom
+                    var snapDist = 30 * zoom  // BOND_END_HIT_RADIUS * zoom
+                    var dist = Math.sqrt((ax-tx)*(ax-tx) + (ay-ty)*(ay-ty))
+                    if (dist < snapDist && a.id !== tempLine.startAtomId) {
+                        // Draw snap highlight ring
+                        ctx.beginPath()
+                        ctx.arc(ax, ay, 14, 0, 2 * Math.PI)
+                        ctx.strokeStyle = "#4F9EFF"
+                        ctx.lineWidth = 2
+                        ctx.stroke()
+                        // Inner glow
+                        ctx.beginPath()
+                        ctx.arc(ax, ay, 14, 0, 2 * Math.PI)
+                        ctx.fillStyle = Qt.rgba(0.31, 0.62, 1.0, 0.15)
+                        ctx.fill()
+                    }
+                }
+
                 // Atom node circle
                 ctx.strokeStyle = Theme.accentBlue
                 ctx.lineWidth = 1.5

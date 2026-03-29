@@ -123,6 +123,7 @@ private:
     static constexpr double MAX_ZOOM = 5.0;
     static constexpr double ZOOM_STEP = 1.15;
     static constexpr double ATOM_HIT_RADIUS = 20.0;
+    static constexpr double BOND_END_HIT_RADIUS = 30.0;
 };
 
 #endif // CHEMCONTROLLER_H

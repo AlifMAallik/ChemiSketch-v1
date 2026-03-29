@@ -19109,6 +19109,7 @@ CMakeFiles/ChemiSketch.dir/src/controllers/ChemController.cpp.o: /Users/jacob/Do
   /Users/jacob/Documents/ChemiSketch-master/chemisketch/src/models/Molecule.h \
   /Users/jacob/Documents/ChemiSketch-master/chemisketch/src/utils/ChemistryUtils.h \
   /Users/jacob/Documents/ChemiSketch-master/chemisketch/src/utils/FileUtils.h \
+  /Users/jacob/Documents/ChemiSketch-master/chemisketch/src/utils/GeometryUtils.h \
   /opt/homebrew/include/QtQmlIntegration/qqmlintegration.h \
   /opt/homebrew/lib/QtCore.framework/Headers/QJsonObject \
   /opt/homebrew/lib/QtCore.framework/Headers/QLineF \
